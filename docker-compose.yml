@@ -11,7 +11,7 @@ services:
   api:
     build: .
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/payment?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/payment?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root1234!!
     depends_on:
