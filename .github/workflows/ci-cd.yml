@@ -1,4 +1,4 @@
-name: fintech-service CI/CD Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -19,21 +19,11 @@ jobs:
         with:
           java-version: '17'
 
-      - name: Build all modules
+      - name: Build with Gradle
         run: ./gradlew clean build
 
-      - name: Run tests
-        run: ./gradlew test
+      - name: Build Docker image
+        run: docker build -t my-springboot-app .
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
-
-    steps:
-      - name: Deploy to production server
-        run: |
-          echo "Deploying to production server..."
-          scp ./api/build/libs/*.jar user@your-server:/path/to/api/
-          scp ./db/build/libs/*.jar user@your-server:/path/to/db/
-          ssh user@your-server "cd /path/to/api/ && java -jar api.jar"
-          ssh user@your-server "cd /path/to/db/ && java -jar db.jar"
+      - name: Run Docker container
+        run: docker run -d -p 8080:8080 my-springboot-app
