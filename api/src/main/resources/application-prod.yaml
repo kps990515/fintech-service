@@ -1,25 +1,13 @@
 spring:
-  profiles:
-    active: local  # 기본 활성화할 프로파일 (이 경우 local)
-
-  jpa:
-    show-sql: true
-    properties:
-      format_sql: true
-      dialect: org.hibernate.dialect.MySQLDialect
-    hibernate:
-      ddl-auto: validate
-
   datasource:
     url: jdbc:mysql://localhost:3306/payment?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root1234!!
 
-  security:
-    user:
-      name: user  # 사용자 이름
-      password: password1!  # 비밀번호
+logging:
+  level:
+    root: WARN
 
 server:
   port: 8443
