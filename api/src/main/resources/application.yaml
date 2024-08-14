@@ -28,3 +28,11 @@ server:
     key-store-password: password1!
     key-store-type: PKCS12
     key-alias: myalias
+    client-auth: none
+
+toss:
+  payments:
+    base-url: "https://api.tosspayments.com/v1"
+    secret-key: "test_sk_EP59LybZ8BploGpKdzqJV6GYo7pR"
+    authorization-type: "Basic"
+    content-type: "application/json"
