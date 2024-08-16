@@ -34,4 +34,4 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ec2-user/fintech-service/api/build/libs/
-            java -jar api-1.0-SNAPSHOT.jar
+            sudo java -jar api-1.0-SNAPSHOT.jar
