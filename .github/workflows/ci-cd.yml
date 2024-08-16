@@ -34,5 +34,5 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ec2-user/fintech-service/api/build/libs/
-            pkill -f 'java -jar' || true
+            sudo pkill -f 'java -jar' || true
             nohup sudo java -jar api-1.0-SNAPSHOT.jar > app.log 2>&1 &
