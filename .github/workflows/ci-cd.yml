@@ -32,7 +32,6 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          port: ${{ secrets.PORT }}
           script: |
             cd /home/ec2-user/fintech-service/api/build/libs/
             sudo pkill -f 'java -jar' || true
