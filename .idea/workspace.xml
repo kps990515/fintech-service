@@ -4,45 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="멀티profile 적용">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/TossPaymentsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/mapper/ObjectConvertUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/PaymentConfirmRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/PaymentConfirmResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentAccountType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentCardAcquireStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentCardInterestPayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentCardType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentCashReceiptIssueStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentCashReceiptTransactionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentCashReceiptType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentOwnerType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentRefundStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentSettlementStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/enumVo/PaymentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentCancel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentCard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentCashReceipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentCheckout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentDiscount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentEasyPay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentFailure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentGiftCertificate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentMobilePhone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentReceipt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentRefundReceiveAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentTransfer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/PaymentVirtualAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/model/PaymentServiceConfirmRequestVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/model/PaymentServiceConfirmResponseVO.java" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="토스 결제승인 API">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +64,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
@@ -173,13 +140,22 @@
       <option name="project" value="LOCAL" />
       <updated>1723554716936</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="토스 결제승인 API">
+      <option name="closed" value="true" />
+      <created>1723657414831</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723657414831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="https설정 세팅" />
     <MESSAGE value="멀티profile 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="멀티profile 적용" />
+    <MESSAGE value="토스 결제승인 API" />
+    <option name="LAST_COMMIT_MESSAGE" value="토스 결제승인 API" />
   </component>
 </project>

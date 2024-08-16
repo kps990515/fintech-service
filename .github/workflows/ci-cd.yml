@@ -26,8 +26,12 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew clean build
 
-      - name: Build Docker image
-        run: docker build -t fintech-service .
-
-      - name: Run Docker container
-        run: docker run -d -p 8080:8080 fintech-service
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ec2-user/fintech-service/api/build/libs/
+            java -jar api-1.0-SNAPSHOT.jar

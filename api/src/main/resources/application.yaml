@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local  # 기본 활성화할 프로파일 (이 경우 local)
+    active: prod  # 기본 활성화할 프로파일 (이 경우 local)
 
   jpa:
     show-sql: true
