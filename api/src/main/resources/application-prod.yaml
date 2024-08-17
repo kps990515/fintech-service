@@ -1,3 +1,6 @@
+server:
+  port: 8080
+
 spring:
   jpa:
     open-in-view: false
@@ -8,15 +11,18 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:mysql://proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/sideproject?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/sideproject
     username: developer
     password: password1!
-  security:
-    user:
-      name: user  # 사용자 이름
-      password: password1!  # 비밀번호
 
 logging:
   level:
     root: WARN
+
+toss:
+  payments:
+    base-url: "https://api.tosspayments.com/v1"
+    secret-key: "test_sk_EP59LybZ8BploGpKdzqJV6GYo7pR"
+    authorization-type: "Basic"
+    content-type: "application/json"
