@@ -7,7 +7,7 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:mysql://sideproject-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/sideproject?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/sideproject?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: developer
     password: password1!
@@ -19,12 +19,3 @@ spring:
 logging:
   level:
     root: WARN
-
-server:
-  port: 443
-  ssl:
-    key-store: classpath:keystore.p12
-    key-store-password: password1!
-    key-store-type: PKCS12
-    key-alias: myalias
-    client-auth: none
