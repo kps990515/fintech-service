@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="EC2 cicd 테스트">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/HealthCheckController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/HealthCheckController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="ec2테스트" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -315,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723840245967</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="ec2테스트">
+      <option name="closed" value="true" />
+      <created>1723897691533</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1723897691533</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -335,6 +337,7 @@
     <MESSAGE value="멀티profile 적용" />
     <MESSAGE value="토스 결제승인 API" />
     <MESSAGE value="EC2 cicd 테스트" />
-    <option name="LAST_COMMIT_MESSAGE" value="EC2 cicd 테스트" />
+    <MESSAGE value="ec2테스트" />
+    <option name="LAST_COMMIT_MESSAGE" value="ec2테스트" />
   </component>
 </project>
