@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="readme">
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/3. Docker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/3. Docker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/8. Jenkins/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/8. Jenkins/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +82,7 @@
       <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\sideProject\fintech-service" />
       <recent name="D:\sideProject\fintech-service\api\src" />
       <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
     </key>
@@ -377,7 +379,31 @@
       <option name="project" value="LOCAL" />
       <updated>1723986615028</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="dockerfile">
+      <option name="closed" value="true" />
+      <created>1723986939378</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1723986939378</updated>
+    </task>
+    <task id="LOCAL-00034" summary="dockerfile">
+      <option name="closed" value="true" />
+      <created>1723987125875</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1723987125875</updated>
+    </task>
+    <task id="LOCAL-00035" summary="dockerfile">
+      <option name="closed" value="true" />
+      <created>1723987200993</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1723987200993</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,6 +425,7 @@
     <MESSAGE value="EC2 cicd 테스트" />
     <MESSAGE value="ec2테스트" />
     <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="dockerfile" />
   </component>
 </project>
