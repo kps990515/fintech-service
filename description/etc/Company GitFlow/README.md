@@ -12,7 +12,7 @@
 
 ### 배포 순서
 1. Release에서 개발요건별로 Feature 브랜치 생성
-2. 개발완료되면 develop, stage머지 후 테스트
+2. 개발완료되면 feature단위로 develop, stage머지 후 테스트
 3. 테스트 완료되면 Release 머지(운영반영)
 
 ### 특징
