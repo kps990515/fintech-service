@@ -43,4 +43,5 @@
 ### 7. [Jenkins](https://github.com/kps990515/fintech-service/blob/master/description/Project%20Setting/README.md)
 
 <br>
-### [회사 Gitflow]()
+
+### [회사 Gitflow](https://github.com/kps990515/fintech-service/blob/master/description/etc/Company%20GitFlow/README.md)
