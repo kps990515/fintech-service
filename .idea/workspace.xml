@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="readme" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="readme">
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/10. AWS-LB/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/Company CICD/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/Company LogFlow/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,6 +64,7 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
@@ -67,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/sideProject/fintech-service/description/Project Setting",
+    "last_opened_file_path": "D:/sideProject/fintech-service/description/etc",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -76,12 +83,16 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sideProject\fintech-service\description\etc" />
+      <recent name="D:\sideProject\fintech-service\description\Project Setting" />
       <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\sideProject\fintech-service\description" />
+      <recent name="D:\sideProject\fintech-service\description\Project Setting" />
+      <recent name="D:\sideProject\fintech-service\description\Project Setting\8. Jenkins" />
       <recent name="D:\sideProject\fintech-service" />
       <recent name="D:\sideProject\fintech-service\api\src" />
-      <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.payment.api.payments.controller.model" />
@@ -416,7 +427,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724088650236</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="readme">
+      <option name="closed" value="true" />
+      <created>1724088770732</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1724088770732</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
