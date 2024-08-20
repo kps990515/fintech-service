@@ -48,4 +48,4 @@
 
 ### [회사 Gitflow](https://github.com/kps990515/fintech-service/blob/master/description/etc/Company%20GitFlow/README.md)
 ### [로그적재/확인 flow](https://github.com/kps990515/fintech-service/tree/master/description/etc/Company%20LogFlow)
-### [CI/CD](https://github.com/kps990515/fintech-service/tree/master/description/etc/Company%20LogFlow)
+### [CI/CD](https://github.com/kps990515/fintech-service/blob/master/description/etc/Company%20CICD/README.md)
