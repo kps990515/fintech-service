@@ -1,21 +1,31 @@
-## 로그적재/확인 flow
+## CI/CD
 
-### 1. 순서
-1. 로그 수집 : Common Library 함수로 정형화된 로그 생성
-2. 로그 적재 
-   - 수집된 로그는 NAS(Network Attached Storage)에 저장
-   - NAS의 로그 변동을 감지해 Filebeat로 로그 수집
-3. 로그 전송 및 처리
-   - Filebeat에서 Flunetd로 전송
-   - Flunedtd는 ElasticSearch DB로 전송
-4. 로그 저장
-   - ElasticSearch에 로그 저장
-5. 로그 검색 및 시각화
-   - Kibana, Grafana
+### 절차
+1. 코드 푸시 및 트리거
+   - Bitbucket 푸시하면 Webhook을 통해 CI/CD 파이프라인 트리거  
+     <br>
 
-### 2. 역할
-1. NAS : 중앙 집중식 스토리지로 로그 통합관리 및 보존/복구 가능
-2. Filebeat : Elastic 로그 포워더로 실시간 로그 수집해 fluentd와 같은 로그 처리시스템 전달
-3. Fluentd : 수집된 로그를 추출/정제 처리하여 ElasticSearch에 전송
-4. ElasticSearch : 로그 데이터의 실시간 분석, 쿼리, 인덱싱
-5. Kibana : 로그 데이터 시각화, 모니터링, 정보 검색
+2. Tekton PipieLine 실행
+   -  yaml파일 설정되로 Tekton 파이프라인 트리거  
+      <br>
+
+3. Docker 이미지 생성
+   - Tekton Pipeline으로 애플리케이션 코드로 Docker이미지 생성
+     <br>
+
+
+4. Nexus 이미지 업로드
+   - 생성된 Docker 이미지 Nexus에 저장/관리
+     <br>
+
+
+5. ArgoCd를 통한 배포
+   - CI과정이 완료되면 ArgoCD로 CD과정 실행
+     <br>
+
+
+6. Blue-Green 배포 및 Istio 헬스 체크
+   - 배포 전략 : Blue-Green
+   - Istio가 HealthCheck를 통해 신규 Pod 상태 확인
+   - HealthCheck 통과시 기존 Pod의 연결을 종료(잔여 TX는 처리)
+   - 신규 Pod로 트래픽 전환
