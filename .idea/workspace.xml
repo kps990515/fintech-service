@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="readme">
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/10. AWS-LB/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/Company CICD/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/Company LogFlow/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -435,7 +431,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724088770732</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="readme">
+      <option name="closed" value="true" />
+      <created>1724163050263</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1724163050263</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
