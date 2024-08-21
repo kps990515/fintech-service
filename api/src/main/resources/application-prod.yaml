@@ -1,5 +1,10 @@
 server:
-  port: 9090
+  port: 8443
+  ssl:
+    key-store: classpath:keystore-prod.p12
+    key-store-password: password1!
+    key-password: password1!
+    key-alias: tomcat
 
 spring:
   jpa:
@@ -10,11 +15,13 @@ spring:
       dialect: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: validate
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/sideproject
     username: developer
     password: password1!
+
   security:
     user:
       name: user  # 사용자 이름
