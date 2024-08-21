@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="readme">
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/11. DNS/README.md" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="https 설정">
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/12. AWS-HTTPS/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/keystore.p12" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/keystore-local.p12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -472,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724170215520</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="https 설정">
+      <option name="closed" value="true" />
+      <created>1724248944091</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1724248944091</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -495,6 +500,7 @@
     <MESSAGE value="ec2테스트" />
     <MESSAGE value="dockerfile" />
     <MESSAGE value="readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <MESSAGE value="https 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="https 설정" />
   </component>
 </project>
