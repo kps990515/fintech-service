@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import reactor.core.publisher.Mono;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 @Service
@@ -24,10 +25,12 @@ public class TossPaymentsService {
     }
 
     public Mono<PaymentServiceConfirmResponseVO> sendPaymentConfirmRequest(PaymentServiceConfirmRequestVO requestVO) {
-        String encodedAuth = Base64.getEncoder().encodeToString(tossPaymentsConfig.getSecretKey().getBytes());
+        String credentials = tossPaymentsConfig.getSecretKey() + ":"; // Secret key에 ":"를 추가
+        String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
+
 
         return webClient.post()
-                .uri("/payments/confirm")
+                .uri(tossPaymentsConfig.getBaseUrl() + "/v1/payments/confirm")
                 .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
                 .header("Content-Type", tossPaymentsConfig.getContentType())
                 .bodyValue(requestVO)

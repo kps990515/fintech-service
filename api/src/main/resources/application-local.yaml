@@ -5,14 +5,8 @@ spring:
     username: root
     password: root1234!!
 
-  security:
-    user:
-      name : user
-      password : password1!
-
 logging:
-  level:
-    root: DEBUG
+  config: classpath:logback-local.xml
 
 server:
   port: 8443
@@ -21,3 +15,10 @@ server:
     key-store-password: password1!
     key-store-type: PKCS12
     key-alias: myalias
+
+toss:
+  payments:
+    base-url: "https://api.tosspayments.com"
+    secret-key: "test_sk_EP59LybZ8BploGpKdzqJV6GYo7pR"
+    authorization-type: "Basic"
+    content-type: "application/json"
