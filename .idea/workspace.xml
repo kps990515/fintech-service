@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="https 설정">
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/12. AWS-HTTPS/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/logback-prod.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/7. AWS/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/7. AWS/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
