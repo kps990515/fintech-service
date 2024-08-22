@@ -1,13 +1,5 @@
 ## logback
 
-```shell
-sudo docker start jenkins_prod
-docker images
-docker run -d -p 8443:8443 \
-  -v /var/log/myapp/:/app/logs \
-  --name fintech-service-new fintech-service:latest
-```
-
 ### logback-spring.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -57,5 +49,12 @@ docker run -d -p 8443:8443 \
         <appender-ref ref="FILE"/>
     </root>
 </configuration>
+```
 
+### 로그확인
+```shell
+docker exec -it fintech-service-new /bin/bash
+cd logs
+ls // 로그 파일확인
+cat spring-boot-app.2024-08-21.log
 ```
