@@ -1,4 +1,4 @@
-package org.payment.api.config;
+package org.payment.api.config.service;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

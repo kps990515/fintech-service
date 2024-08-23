@@ -1,6 +1,6 @@
 package org.payment.api.payments.service;
 
-import org.payment.api.config.TossPaymentsConfig;
+import org.payment.api.config.service.TossPaymentsConfig;
 import org.payment.api.payments.service.model.PaymentServiceConfirmRequestVO;
 import org.payment.api.payments.service.model.PaymentServiceConfirmResponseVO;
 import org.springframework.stereotype.Service;

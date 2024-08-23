@@ -1,7 +1,7 @@
 package org.payment.api.payments.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.payment.api.config.mapper.ObjectConvertUtil;
+import org.payment.api.common.ObjectConvertUtil;
 import org.payment.api.payments.controller.model.PaymentConfirmRequest;
 import org.payment.api.payments.controller.model.PaymentConfirmResponse;
 import org.payment.api.payments.service.TossPaymentsService;
