@@ -23,6 +23,7 @@ public class TossPaymentsController {
     @PostMapping("/confirm")
     public Mono<ResponseEntity<PaymentConfirmResponse>> confirmPayment(@RequestBody PaymentConfirmRequest requestVO) {
         PaymentServiceConfirmRequestVO serviceVo = ObjectConvertUtil.copyVO(requestVO, PaymentServiceConfirmRequestVO.class);
+
         return tossPaymentsService.sendPaymentConfirmRequest(serviceVo)
                 .map(response -> {
                     PaymentConfirmResponse paymentConfirmResponse = ObjectConvertUtil.copyVO(response, PaymentConfirmResponse.class);

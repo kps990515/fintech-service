@@ -20,6 +20,15 @@ public class ObjectConvertUtil {
     }
 
     public static <T> T copyVO(Object fromValue, Class<T> toValueType) {
-        return objectMapper.convertValue(fromValue, toValueType);
+        try {
+            // 새로운 인스턴스를 생성
+            T targetInstance = toValueType.getDeclaredConstructor().newInstance();
+            // fromValue를 targetInstance로 복사
+            objectMapper.updateValue(targetInstance, fromValue);
+
+            return targetInstance;
+        } catch (Exception e) {
+            throw new RuntimeException("VO copy failed", e);
+        }
     }
 }
