@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="testCode작성">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/15. filter/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/TossPaymentsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/service/TossPaymentsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/mapper/ObjectConvertUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/ObjectConvertUtil.java" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="LoggerFilter 적용">
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/org/payment/api/payments/controller/TossPaymentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/org/payment/api/payments/controller/TossPaymentControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/14. testcode/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/14. testcode/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00003" summary="토스 결제승인 API">
-      <option name="closed" value="true" />
-      <created>1723657414831</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1723657414831</updated>
     </task>
     <task id="LOCAL-00004" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -580,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724411342911</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="LoggerFilter 적용">
+      <option name="closed" value="true" />
+      <created>1724413940822</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1724413940822</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -607,6 +599,7 @@
     <MESSAGE value="logback" />
     <MESSAGE value="toss payment" />
     <MESSAGE value="testCode작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="testCode작성" />
+    <MESSAGE value="LoggerFilter 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoggerFilter 적용" />
   </component>
 </project>

@@ -20,7 +20,7 @@ public class TossPaymentsController {
 
     private final TossPaymentsService tossPaymentsService;
 
-    @PostMapping("/confirm")
+    @PostMapping("/v1/confirm")
     public Mono<ResponseEntity<PaymentConfirmResponse>> confirmPayment(@RequestBody PaymentConfirmRequest requestVO) {
         PaymentServiceConfirmRequestVO serviceVo = ObjectConvertUtil.copyVO(requestVO, PaymentServiceConfirmRequestVO.class);
 
