@@ -3,7 +3,7 @@
 ### jenkins
 1. 실행
 ```shell
-sudo docker start jenkins_prod 
+sudo docker start jenkins_prod
 ```
 2. jenkins bash 접근
 ```shell
