@@ -1,4 +1,4 @@
-## 세팅
+## MYsql 세팅
 
 ### 로컬
 ```yaml
@@ -26,7 +26,19 @@ show databases
 create databases projectdb;
 ```
 
-## 활용
+## JPA
+
+### OSIV(Open Session In View)
+- 영속성 컨텍스트가 view에 응답이 갈때가지 유지할지 결정하는 설정(기본값 true)
+- Lazy Loading을 사용하기 위해 주로 사용
+- 문제는 HTTP요청마다 영속성컨텍스트 <-> DB 커넥션 유지되서 과부하 발생가능
+- 실사례
+  - true : 상품상세정보를 호출할때 Lazy로딩이 실행되서 LazyInitializationException 미발생
+  - fasel : Lazy로딩 실패해서 Exception발생
+- 활용법
+  - true : Lazy로딩 미사용 / 요청이 많지 않은 곳 / 커넥션 많지 않은 곳
+  - false : 실시간 고객서비스(채팅)
+
 
 ### 1. JPAConfig
 - db모듈에 세팅
@@ -113,7 +125,7 @@ public class UserEntity extends BaseEntity implements Persistable<String> {
 }
 ```
 
-### 3. Repository
+### 4. Repository
 ```java
 @Repository
 public interface UserRdbRepository extends JpaRepository<UserEntity, String> {

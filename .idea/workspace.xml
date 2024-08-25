@@ -4,41 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="versioning">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/ExistUserFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/InvalidSessionException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/UserNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/db/redis/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/AccountManageCotroller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/LoginReponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/UserRegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/model/UserRegisterServiceRequestVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/model/UserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/src/main/java/org/payment/db/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/src/main/java/org/payment/db/config/rdb/JpaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/src/main/java/org/payment/db/user/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/src/main/java/org/payment/db/user/UserRdbRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/16. Redis/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/17. Session/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/18. Mysql&amp;JPA/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/19. MappingTools/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/20. Exception/README.md" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="Session redis mysql">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/ObjectConvertUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/util/ObjectConvertUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/org/payment/api/payments/controller/TossPaymentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/org/payment/api/payments/controller/TossPaymentControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/db/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/src/main/java/org/payment/db/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/18. Mysql&amp;JPA/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/18. Mysql&amp;JPA/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,22 +206,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00005" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723818774885</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1723818774885</updated>
-    </task>
-    <task id="LOCAL-00006" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723819618449</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1723819618449</updated>
     </task>
     <task id="LOCAL-00007" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -631,7 +583,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724417881823</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Session redis mysql">
+      <option name="closed" value="true" />
+      <created>1724590011412</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1724590011412</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Session redis mysql">
+      <option name="closed" value="true" />
+      <created>1724590117927</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1724590117927</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -660,7 +628,8 @@
     <MESSAGE value="testCode작성" />
     <MESSAGE value="LoggerFilter 적용" />
     <MESSAGE value="versioning" />
-    <option name="LAST_COMMIT_MESSAGE" value="versioning" />
+    <MESSAGE value="Session redis mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Session redis mysql" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
