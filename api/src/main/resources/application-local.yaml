@@ -1,9 +1,18 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/payment?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://localhost:3306/fintech_service?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root1234!!
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+  session:
+    store-type: redis
+    timeout: 1800s # 세션 타임아웃 설정 (30분)
+
 
 logging:
   config: classpath:logback-local.xml

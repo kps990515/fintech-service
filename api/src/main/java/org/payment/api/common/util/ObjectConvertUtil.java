@@ -1,4 +1,4 @@
-package org.payment.api.common;
+package org.payment.api.common.util;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

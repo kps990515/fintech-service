@@ -2,7 +2,7 @@ package org.payment.api.payments.controller;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.payment.api.common.ObjectConvertUtil;
+import org.payment.api.common.util.ObjectConvertUtil;
 import org.payment.api.payments.controller.model.PaymentConfirmRequest;
 import org.payment.api.payments.controller.model.PaymentConfirmResponse;
 import org.payment.api.payments.service.TossPaymentsService;

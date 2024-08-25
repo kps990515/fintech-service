@@ -37,3 +37,10 @@ cd logs
 ls // 로그 파일확인
 cat spring-boot-app.2024-08-21.log
 ```
+
+### MYSQL
+```shell
+mysql -h proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com -u developer -p
+show databases
+create databases projectdb;
+```

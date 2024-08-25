@@ -8,7 +8,6 @@ server:
 
 spring:
   jpa:
-    open-in-view: false
     show-sql: false
     properties:
       format_sql: true
@@ -18,7 +17,7 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/sideproject
+    url: jdbc:mysql://proejct-rds-mysql8.cjug24qm0gxh.ap-northeast-2.rds.amazonaws.com:3306/fintech_service
     username: developer
     password: password1!
 
