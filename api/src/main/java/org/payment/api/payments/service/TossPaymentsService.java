@@ -8,6 +8,8 @@ import io.netty.channel.ChannelOption;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.scheduler.Schedulers;
 import reactor.netty.resources.ConnectionProvider;
 import org.payment.api.config.service.TossPaymentsConfig;
@@ -21,6 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import reactor.core.publisher.Mono;
 import reactor.netty.http.client.HttpClient;
 import reactor.netty.transport.logging.AdvancedByteBufFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
@@ -28,6 +32,8 @@ import java.util.Base64;
 
 @Service
 public class TossPaymentsService {
+
+    private static final Logger log = LoggerFactory.getLogger(TossPaymentsService.class);
 
     private final WebClient webClient;
     private final TossPaymentsConfig tossPaymentsConfig;
@@ -63,16 +69,13 @@ public class TossPaymentsService {
                 .clientConnector(new ReactorClientHttpConnector(httpClient))
                 .baseUrl(tossPaymentsConfig.getBaseUrl())
                 .build();
-
-
     }
 
     public Mono<PaymentServiceConfirmResponseVO> sendPaymentConfirmRequest(PaymentServiceConfirmRequestVO requestVO) {
         String credentials = tossPaymentsConfig.getSecretKey() + ":"; // Secret key에 ":"를 추가
         String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
 
-        //대용량 트래픽을 고려해야한다
-        //(TODO)방법들을 찾아서 의견여쭤보기
+        //(TODO)대용량 트래픽을 고려 방법들을 찾아서 의견여쭤보기
         //(TODO)실패했을떄의 재처리 방법(retry방식고려 count고려해서 그 뒤에 어캐할건지)
         //(TODO)실패했을떄의 로그저장
         return Mono.defer(() -> webClient.post() //Mono.defer()을 통해 호출시마다 새로운 mono생성해 독립적 요청 처리 보장
@@ -85,12 +88,37 @@ public class TossPaymentsService {
                         .bodyToMono(PaymentServiceConfirmResponseVO.class))
                 .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)) // 전역 Circuit Breaker 적용
                 .transformDeferred(RetryOperator.of(retry)) // Retry 적용
-                .subscribeOn(Schedulers.boundedElastic());  // mono의 비동기 작업을 boundedElastic 스케줄러에서 처리
+                .subscribeOn(Schedulers.boundedElastic())  // mono의 비동기 작업을 boundedElastic 스케줄러에서 처리
+                .doOnError(throwable -> {
+                    if (!(throwable instanceof RuntimeException)) {
+                        log.error("confirm API 에러 발생", throwable); // handleError에서 잡지않은 RuntimeException만 잡기
+                    }
+                });
     }
 
 
+    // 응답 에러 발생 시 동작
     private Mono<? extends Throwable> handleError(ClientResponse clientResponse) {
         return clientResponse.bodyToMono(String.class)
-                .flatMap(errorBody -> Mono.error(new RuntimeException("API Error: " + errorBody)));
+                .flatMap(errorBody -> {
+                    logErrorResponse(clientResponse.statusCode().value(), errorBody);
+                    HttpStatus status = HttpStatus.valueOf(clientResponse.statusCode().value());
+                    return Mono.error(WebClientResponseException.create(
+                            status.value(),
+                            status.getReasonPhrase(), // HTTP 상태 코드의 설명을 가져옴
+                            clientResponse.headers().asHttpHeaders(),
+                            errorBody.getBytes(),
+                            null));
+                });
+    }
+
+    private void logErrorResponse(int statusCode, String errorBody) {
+        if (statusCode >= 500) {
+            log.error("서버 에러 발생: {} - Response: {}", statusCode, errorBody);
+        } else if (statusCode >= 400) {
+            log.warn("클라이언트 에러 발생: {} - Response: {}", statusCode, errorBody);
+        } else {
+            log.info("Unexpected 에러 발생: {} - Response: {}", statusCode, errorBody);
+        }
     }
 }

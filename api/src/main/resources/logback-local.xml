@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- 비동기 로깅을 위한 AsyncAppender 설정 -->
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender"> <!-- 로깅을 비동기로 처리 -->
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+        <queueSize>5000</queueSize> <!-- 로깅 보관할 큐 사이즈 -->
+        <discardingThreshold>90</discardingThreshold> <!-- 큐가 90%이면 버리기 시작함  -->
+        <neverBlock>false</neverBlock> <!-- 큐 full일때 true이면 로그 버림, false이면 대기 -->
+    </appender>
+
+    <!-- 파일로 로그를 출력하는 FileAppender 설정 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/application.log</file> <!-- 로그 저장될 위치 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/application-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <root level="DEBUG">
-        <appender-ref ref="CONSOLE"/>
+    <!-- 콘솔 출력용 콘솔 Appender 설정 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 루트 로거 설정 -->
+    <root level="INFO">
+        <appender-ref ref="ASYNC"/>
     </root>
+
+    <!-- 특정 패키지에 대한 로깅 레벨 설정 -->
+    <logger name="org.payment.api" level="DEBUG"/>
 </configuration>

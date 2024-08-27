@@ -147,12 +147,124 @@ public TossPaymentsService(WebClient.Builder webClientBuilder, TossPaymentsConfi
 .transformDeferred(RetryOperator.of(retry)) // Retry 적용
 ```
 
-### 4. Retry적용
-1. build.gradle
+### 4. 로깅적용
+1. Gradle
 ```yaml
-implementation 'io.github.resilience4j:resilience4j-retry:2.1.0'
+implementation 'org.slf4j:slf4j-api:1.7.36'
+implementation 'ch.qos.logback:logback-classic:1.4.12' 
 ```
 
+2. logback.xml
+- AsyncAppender : 로깅을 비동기로 처리하는 클래스
+- discardingThreshold : 큐가 채워졌을 때 로그를 버리기 시작하는 기준을 설정하는 값
+- neverBlock : 큐가 가득 찼을 때 새로운 로그 이벤트를 대기시키거나(false) 버리는 기준 값(true)
+```xml
+<configuration>
+    <!-- 비동기 로깅을 위한 AsyncAppender 설정 -->
+    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender"> <!-- 로깅을 비동기로 처리 -->
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="CONSOLE"/>
+        <queueSize>5000</queueSize> <!-- 로깅 보관할 큐 사이즈 -->
+        <discardingThreshold>90</discardingThreshold> <!-- 큐가 90%이면 버리기 시작함  -->
+        <neverBlock>false</neverBlock> <!-- 큐 full일때 true이면 로그 버림, false이면 대기 -->
+    </appender>
 
+    <!-- 파일로 로그를 출력하는 FileAppender 설정 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/application.log</file> <!-- 로그 저장될 위치 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/application-%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
 
+    <!-- 콘솔 출력용 콘솔 Appender 설정 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
 
+    <!-- 루트 로거 설정 -->
+    <root level="INFO">
+        <appender-ref ref="ASYNC"/>
+    </root>
+
+    <!-- 특정 패키지에 대한 로깅 레벨 설정 -->
+    <logger name="org.payment.api" level="DEBUG"/>
+</configuration>
+```
+3. API
+- API 요청에 대한 에러처리
+```java
+.doOnError(throwable -> {
+    if (!(throwable instanceof RuntimeException)) {
+        log.error("confirm API 에러 발생", throwable); // handleError에서 잡지않은 RuntimeException만 잡기
+    }
+})
+```
+- API 응답에 대한 에러처리
+```java
+private Mono<? extends Throwable> handleError(ClientResponse clientResponse) {
+    return clientResponse.bodyToMono(String.class)
+            .flatMap(errorBody -> {
+                logErrorResponse(clientResponse.statusCode().value(), errorBody);
+                HttpStatus status = HttpStatus.valueOf(clientResponse.statusCode().value());
+                return Mono.error(WebClientResponseException.create(
+                        status.value(),
+                        status.getReasonPhrase(), // HTTP 상태 코드의 설명을 가져옴
+                        clientResponse.headers().asHttpHeaders(),
+                        errorBody.getBytes(),
+                        null));
+            });
+}
+// 콘솔, 파일적재 용
+private void logErrorResponse(int statusCode, String errorBody) {
+    if (statusCode >= 500) {
+        log.error("서버 에러 발생: {} - Response: {}", statusCode, errorBody);
+    } else if (statusCode >= 400) {
+        log.warn("클라이언트 에러 발생: {} - Response: {}", statusCode, errorBody);
+    } else {
+        log.info("Unexpected 에러 발생: {} - Response: {}", statusCode, errorBody);
+    }
+}
+```
+
+### 4. 백프레셔(참고만)
+- 정의 : 스트림 데이터의 생산자와 소비자 사이에 속도 차이를 조절하는 메커니즘
+- 필요성 : 생산자의 생산 속도를 소비자가 못따라갈 수 있음
+- 처리방법
+  - 주된 방법 : 소비자가 데이터양을 조절
+  - 생산자가 buffer(), drop(), sample()로 생산량 조절
+- 함수
+  - buffer : 데이터를 버퍼에 저장하여 일정량이 쌓였을 때 한꺼번에 소비자에게 전달
+  - drop : 소비자가 소비할수없는 양일 경우 버림
+  - sample : 중요 데이터만 전달
+
+#### 지식
+1. subscribeOn vs. publishOn
+- subscribeOn : 스트림의 어디에 위치하든지 간에 스트림의 맨 처음 작업부터 스케줄러를 적용
+- publishOn : 스트림에서 해당 메서드가 호출된 이후의 연산자들에 대해서만 스케줄러를 지정
+  - 백프레셔를 관리하기 위해 publishOn후에 커스터마이징 가능
+```java
+.subscribeOn(Schedulers.boundedElastic())  // mono의 비동기 작업을 boundedElastic 스케줄러에서 처리
+
+// 예시
+.publishOn(Schedulers.boundedElastic()) // 이 지점 이후의 연산자들은 boundedElastic 스케줄러에서 실행됨
+.limitRate(10) // flux에서 요청 처리 속도 제한
+.onBackpressureBuffer(100, // 100개까지 버퍼 저장
+        dropped -> log.warn("Dropped request: {}", dropped)) // 버퍼 초과 이후 로그로 남김
+
+```
+
+### 5. 부하테스트
+- Jmeter사용하면 좋을듯
+- 예시
+  1. JMeter를 설치하고 실행합니다.
+  2. 테스트 플랜을 작성하여 HTTP 요청을 정의합니다.
+  3. Thread Group에서 사용자 수와 Ramp-up 시간(사용자가 늘어나는 시간), 루프 카운트(각 사용자가 요청을 반복하는 횟수)를 설정합니다.
+  4. 결과를 수집하고 분석할 수 있도록 Listener를 추가합니다.
+  5. 테스트를 실행하고 결과를 분석합니다.
