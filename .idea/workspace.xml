@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="대용량 트래픽 대비 &amp; 실패 대비 #2">
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/22. WebClient&amp;Feign/README.md" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="webclient&amp;feign">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/MDCFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/23. non-stop Certification/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/24. mdc/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/Company LogAlarm/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/LoggerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/etc/Company LogFlow/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/etc/Company LogFlow/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,14 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00010" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723824347900</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1723824347900</updated>
     </task>
     <task id="LOCAL-00011" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -599,7 +599,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724768192156</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="webclient&amp;feign">
+      <option name="closed" value="true" />
+      <created>1724772059917</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1724772059917</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -632,7 +640,8 @@
     <MESSAGE value="OSIV" />
     <MESSAGE value="대용량 트래픽 대비 &amp; 실패 대비 #1" />
     <MESSAGE value="대용량 트래픽 대비 &amp; 실패 대비 #2" />
-    <option name="LAST_COMMIT_MESSAGE" value="대용량 트래픽 대비 &amp; 실패 대비 #2" />
+    <MESSAGE value="webclient&amp;feign" />
+    <option name="LAST_COMMIT_MESSAGE" value="webclient&amp;feign" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

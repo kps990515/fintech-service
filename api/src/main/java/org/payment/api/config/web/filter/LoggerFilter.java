@@ -1,4 +1,4 @@
-package org.payment.api.config.web;
+package org.payment.api.config.web.filter;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;

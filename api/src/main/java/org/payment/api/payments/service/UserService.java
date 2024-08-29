@@ -15,8 +15,6 @@ import org.payment.db.user.UserRdbRepository;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.TimeUnit;
-
 @Service
 @RequiredArgsConstructor
 public class UserService {
@@ -39,10 +37,10 @@ public class UserService {
         if (userVO.getPassword().equals(password)) {
             //세션 저장
             httpSession.setAttribute("USER_SESSION", userVO);
-            // Redis 저장
-            String sessionId = httpSession.getId();
-            String redisKey = "USER_SESSION:" + sessionId;
-            redisTemplate.opsForValue().set(redisKey, userVO, 1800L, TimeUnit.SECONDS);
+            // (TODO)Redis 저장이 굳이 필요한가 이미 기본세팅인데
+            //String sessionId = httpSession.getId();
+            //String redisKey = "USER_SESSION:" + sessionId;
+            //redisTemplate.opsForValue().set(redisKey, userVO, 1800L, TimeUnit.SECONDS);
         } else {
             throw new InvalidSessionException("유저정보가 일치하지 않습니다");
         }
