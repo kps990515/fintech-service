@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="webclient&amp;feign">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/MDCFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/23. non-stop Certification/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/24. mdc/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/Company LogAlarm/README.md" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="MDC">
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/25. lint/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/application-2024-08-28.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/LoggerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/etc/Company LogFlow/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/etc/Company LogFlow/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,25 +68,26 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/description/Project Setting&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/sideProject/fintech-service/api",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.infernus.idea.checkstyle.CheckStyleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.payment.api.payments.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sideProject\fintech-service\api" />
       <recent name="D:\sideProject\fintech-service\description\Project Setting" />
       <recent name="D:\sideProject\fintech-service\description\etc" />
       <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
@@ -214,14 +208,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00011" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723824547639</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1723824547639</updated>
     </task>
     <task id="LOCAL-00012" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -607,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724772059917</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="MDC">
+      <option name="closed" value="true" />
+      <created>1724942573109</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1724942573109</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -641,7 +635,8 @@
     <MESSAGE value="대용량 트래픽 대비 &amp; 실패 대비 #1" />
     <MESSAGE value="대용량 트래픽 대비 &amp; 실패 대비 #2" />
     <MESSAGE value="webclient&amp;feign" />
-    <option name="LAST_COMMIT_MESSAGE" value="webclient&amp;feign" />
+    <MESSAGE value="MDC" />
+    <option name="LAST_COMMIT_MESSAGE" value="MDC" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
