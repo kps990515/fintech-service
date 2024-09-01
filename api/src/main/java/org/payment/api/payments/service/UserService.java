@@ -2,17 +2,16 @@ package org.payment.api.payments.service;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.payment.api.common.util.ObjectConvertUtil;
 import org.payment.api.common.exception.ExistUserFoundException;
 import org.payment.api.common.exception.InvalidSessionException;
 import org.payment.api.common.exception.UserNotFoundException;
+import org.payment.api.common.util.ObjectConvertUtil;
 import org.payment.api.payments.controller.model.LoginRequest;
 import org.payment.api.payments.service.mapper.UserMapper;
 import org.payment.api.payments.service.model.UserRegisterServiceRequestVO;
 import org.payment.api.payments.service.model.UserVO;
 import org.payment.db.user.UserEntity;
 import org.payment.db.user.UserRdbRepository;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +20,6 @@ public class UserService {
 
     private final UserRdbRepository userRdbRepository;
     private final UserMapper userMapper;
-    private final RedisTemplate<String, Object> redisTemplate;
 
     public void login(LoginRequest loginRequest, HttpSession httpSession){
         String email = loginRequest.getEmail();
@@ -35,12 +33,8 @@ public class UserService {
 
         // 2. 사용자 정보 일치하는지 확인
         if (userVO.getPassword().equals(password)) {
-            //세션 저장
+            // 세션에 사용자 정보 저장 (Redis로 자동 저장)
             httpSession.setAttribute("USER_SESSION", userVO);
-            // (TODO)Redis 저장이 굳이 필요한가 이미 기본세팅인데
-            //String sessionId = httpSession.getId();
-            //String redisKey = "USER_SESSION:" + sessionId;
-            //redisTemplate.opsForValue().set(redisKey, userVO, 1800L, TimeUnit.SECONDS);
         } else {
             throw new InvalidSessionException("유저정보가 일치하지 않습니다");
         }

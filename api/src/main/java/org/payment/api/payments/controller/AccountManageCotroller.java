@@ -37,10 +37,9 @@ public class AccountManageCotroller {
             throw new InvalidSessionException();
         }
 
-        String sessionId = httpSession.getId();
-        UserVO userVO = (UserVO) redisTemplate.opsForValue().get("USER_SESSION:" + sessionId);
+        UserVO userVO = ObjectConvertUtil.copyVO(httpSession.getAttribute("USER_SESSION"), UserVO.class);
 
-        if (userVO == null) {
+        if (userVO.getId() == null) {
             throw new InvalidSessionException();
         }
 
@@ -50,13 +49,7 @@ public class AccountManageCotroller {
 
     @PostMapping("/v1/logout")
     public ResponseEntity<String> logout(HttpSession httpSession) {
-        String sessionId = httpSession.getId();
-        String redisKey = "USER_SESSION:" + sessionId;
-
-        // Redis에서 세션 데이터 삭제
-        redisTemplate.delete(redisKey);
-
-        // HttpSession 무효화
+        // HttpSession 무효화(Httpsession객체 내부적으로 세션 ID를 알고있음)
         httpSession.invalidate();
 
         return ResponseEntity.ok("로그아웃 완료");
