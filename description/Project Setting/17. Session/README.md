@@ -28,6 +28,8 @@ implementation 'org.springframework.session:spring-session-data-redis'
 ```
 
 - Session에 저장할 객체 생성
+    - implements Serializable 이유 : Spring Session이 Redis에 세션 데이터를 저장할 때 직렬화 과정을 거치기 때문
+    - Spring Session과 RedisTemplate의 설정은 별개라 따로 해야함
 ```java
 @Getter
 @Setter

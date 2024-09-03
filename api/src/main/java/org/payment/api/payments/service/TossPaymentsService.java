@@ -8,6 +8,9 @@ import io.netty.channel.ChannelOption;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
+import org.payment.api.payments.service.model.TransactionGetRequestVO;
+import org.payment.api.payments.service.model.TransactionVO;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.scheduler.Schedulers;
@@ -29,6 +32,7 @@ import org.slf4j.LoggerFactory;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Base64;
+import java.util.List;
 
 @Service
 public class TossPaymentsService {
@@ -75,11 +79,8 @@ public class TossPaymentsService {
         String credentials = tossPaymentsConfig.getSecretKey() + ":"; // Secret key에 ":"를 추가
         String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
 
-        //(TODO)대용량 트래픽을 고려 방법들을 찾아서 의견여쭤보기
-        //(TODO)실패했을떄의 재처리 방법(retry방식고려 count고려해서 그 뒤에 어캐할건지)
-        //(TODO)실패했을떄의 로그저장
         return Mono.defer(() -> webClient.post() //Mono.defer()을 통해 호출시마다 새로운 mono생성해 독립적 요청 처리 보장
-                        .uri(tossPaymentsConfig.getBaseUrl() + "/v1/payments/confirm")
+                        .uri(tossPaymentsConfig.getBaseUrl() + "/payments/confirm")
                         .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
                         .header("Content-Type", tossPaymentsConfig.getContentType())
                         .bodyValue(requestVO)
@@ -92,6 +93,40 @@ public class TossPaymentsService {
                 .doOnError(throwable -> {
                     if (!(throwable instanceof RuntimeException)) {
                         log.error("confirm API 에러 발생", throwable); // handleError에서 잡지않은 RuntimeException만 잡기
+                    }
+                });
+    }
+
+    public Mono<List<TransactionVO>> getTransaction(TransactionGetRequestVO requestVO) {
+        String credentials = tossPaymentsConfig.getSecretKey() + ":"; // Secret key에 ":"를 추가
+        String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
+
+        return Mono.defer(() -> webClient.get()
+                        .uri(uriBuilder -> {
+                            uriBuilder
+                                    .path(tossPaymentsConfig.getBaseUrl() + "/v1/transactions")
+                                    .queryParam("startDate", requestVO.getStartDate())
+                                    .queryParam("endDate", requestVO.getEndDate());
+                            // Optional parameters 처리
+                            if (requestVO.getStartingAfter() != null) {
+                                uriBuilder.queryParam("startingAfter", requestVO.getStartingAfter());
+                            }
+                            if (requestVO.getLimit() > 0) { // 기본값을 0으로 가정하고 양수인 경우에만 설정
+                                uriBuilder.queryParam("limit", requestVO.getLimit());
+                            }
+                            return uriBuilder.build();
+                        })
+                        .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
+                        .retrieve()
+                        .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), this::handleError)
+                        .bodyToMono(new ParameterizedTypeReference<List<TransactionVO>>() {})
+                )
+                .transformDeferred(RetryOperator.of(retry)) // Retry 적용 (먼저)
+                .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)) // Circuit Breaker 적용 (나중)
+                .subscribeOn(Schedulers.boundedElastic()) // 비동기 작업을 boundedElastic 스케줄러에서 처리
+                .doOnError(throwable -> {
+                    if (!(throwable instanceof RuntimeException)) {
+                        log.error("Transaction API 에러 발생", throwable); // handleError에서 처리하지 않은 에러 처리
                     }
                 });
     }
