@@ -622,3 +622,159 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
                 - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    
 2024-09-03 23:12:06.549 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
                 - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    
+2024-09-03 23:16:43.858 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:16:43.858 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:16:43.894 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 13304 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:16:43.894 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 13304 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:16:43.895 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:16:43.895 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:16:43.896 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:16:43.896 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:16:44.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.   
+2024-09-03 23:16:44.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.   
+2024-09-03 23:16:44.751 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.751 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.752 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.752 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:44.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:44.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:45.690 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:16:45.690 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:16:45.700 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:45.700 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:16:45.776 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:16:45.776 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:16:45.777 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1829 ms   
+2024-09-03 23:16:45.777 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1829 ms   
+2024-09-03 23:16:45.908 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:16:45.908 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:16:45.952 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:16:45.952 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:16:45.990 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:16:45.990 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:16:46.188 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:16:46.188 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:16:46.208 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:16:46.208 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:16:46.344 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eb6037d   
+2024-09-03 23:16:46.344 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eb6037d   
+2024-09-03 23:16:46.348 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.   
+2024-09-03 23:16:46.348 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.   
+2024-09-03 23:16:47.089 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)   
+2024-09-03 23:16:47.089 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)   
+2024-09-03 23:16:47.121 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'   
+2024-09-03 23:16:47.121 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'   
+2024-09-03 23:16:48.087 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning   
+2024-09-03 23:16:48.087 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning   
+2024-09-03 23:16:48.299 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:48.299 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:48.453 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null]   
+2024-09-03 23:16:48.453 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null]   
+2024-09-03 23:16:48.461 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path ''   
+2024-09-03 23:16:48.461 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path ''   
+2024-09-03 23:16:48.469 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 5.068 seconds (process running for 5.447)   
+2024-09-03 23:16:48.469 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 5.068 seconds (process running for 5.447)   
+2024-09-03 23:16:51.445 [https-jsse-nio-8443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'   
+2024-09-03 23:16:51.445 [https-jsse-nio-8443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'   
+2024-09-03 23:16:51.446 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'   
+2024-09-03 23:16:51.446 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'   
+2024-09-03 23:16:51.447 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms   
+2024-09-03 23:16:51.447 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms   
+2024-09-03 23:16:51.575 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - >>>>> uri : /api/payments/v1/transactions, method : GET, header : [host : localhost:8443] [connection : keep-alive] [___internal-request-id : 8e869b9f-e9c3-4002-b423-89e3c020c28b] [sec-ch-ua : "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"] [sec-ch-ua-mobile : ?0] [sec-ch-ua-platform : "Windows"] [accept : */*] [sec-fetch-site : none] [sec-fetch-mode : cors] [sec-fetch-dest : empty] [accept-encoding : gzip, deflate, br, zstd] [accept-language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7] , body :    
+2024-09-03 23:16:51.575 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - >>>>> uri : /api/payments/v1/transactions, method : GET, header : [host : localhost:8443] [connection : keep-alive] [___internal-request-id : 8e869b9f-e9c3-4002-b423-89e3c020c28b] [sec-ch-ua : "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"] [sec-ch-ua-mobile : ?0] [sec-ch-ua-platform : "Windows"] [accept : */*] [sec-fetch-site : none] [sec-fetch-mode : cors] [sec-fetch-dest : empty] [accept-encoding : gzip, deflate, br, zstd] [accept-language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7] , body :    
+2024-09-03 23:16:51.576 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    
+2024-09-03 23:16:51.576 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    

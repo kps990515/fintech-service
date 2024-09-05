@@ -1,26 +1,47 @@
-## 무중단 인증서
+## 1.타 회사 무중단 인증서방법
 
-nginx에
+1. 리버스 프록시를 사용한 nginx(클라이언트요청 -> 내부서버 전송)
+- 흐름
+    1. 클라이언트가 https://example.com 접근시, NGINX는 443번 포트에서 암호화된 HTTPS 요청 수령
+    2. HTTP/2 프로토콜로 처리
+    3. Springboot에 전달 
+```shell
 server {
-listen 443 ssl http2;
-server_name example.com;
-
-# ssl 인증서 적용하기
-ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
-
-location / { # location 이후 특정 url을 처리하는 방법을 정의(여기서는 / -> 즉, 모든 request)
-proxy_pass https//localhost:9001; # Request에 대해 어디로 리다이렉트하는지 작성. 8443 -> 자신의 springboot app 이사용하는 포트
-proxy_set_header Host $http_host;
-proxy_set_header X-Real-IP $remote_addr;
-proxy_set_header
-
-# 경험
-리눅스의 참조를 활용해서 인증서 경로를 스크립트를 통해 관리하고 신규생성후 참조값만 변경해준다
-전사적으로 날짜 정해버리기
+listen 443 ssl http2; # 클라이언트에서 443으로 오는 HTTPS요청 처리
+server_name example.com; # 클라이언트에서 example.com을 호출할때만 처리하도록 명시
+```
 
 
-### 방법
+2. Nginx에 SSL인증서를 적용 & Springboot에 요청을 전달하는 방식
+    1. SSL인증서 적용
+    ```shell
+    # 서버가 사용할 SSL 인증서(공개키)
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    # 서버의 개인 키
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    ```
+
+    2. 리버스 프록시 설정
+    ```shell
+    # Request 처리방법 정의 ( / 는 전체 API 처리, /api, /login 등등)
+    location / {...}
+    # Request를 어디로 리다이렉트하는지 작성. 8443 -> 자신의 springboot app 이사용하는 포트
+    proxy_pass https//localhost:9001; 
+    # Nginx가 보낼 HTTP 헤더 설정부분($http_host는 클라가 요청한 도메인 example.com)
+    proxy_set_header Host $http_host; 
+    # X-Real-IP에 클라의 실제 IP정보 담아서 전달
+    proxy_set_header X-Real-IP $remote_addr;
+    #$proxy_add_x_forwarded_for : 여러 프록시를 거쳐서 요청했을 때 원래 클라이언트의 IP를 추적
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    ```
+
+    3. 리눅스 참조를 통해 인증서 경로 관리(파일만 바뀌고 경로는 고정)
+       - 인증서 파일은 기본 /etc/letsencrypt/live/example.com/에 저장
+       - 해당 경로에 대한 심볼릭 링크 지정
+       - 인증서 파일 변경 해도 해당 심볼릭 링크는 고정이라 바뀐 인증서를 참조
+
+
+## 2.공부한 방법
 1. Certbot을 사용한 자동갱신
    - 자동갱신 스크립트 생성하여 만료되기 전 자동갱신
   
@@ -58,161 +79,18 @@ sudo certbot renew --dry-run
       - 파일 변경(수정)이 발생하면 이벤트를 발생
     - checkCertificate : 1시간마다 주기적으로 인증서의 만료 여부를 확인
       - checkCertificateExpiry : 만료되면 새로운 .p12파일 생성하고 SSLCONTEXT다시로드
-```java
-@Component
-@Component
-public class SSLCertificateReloader {
 
-    private SSLContext sslContext;
-    private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
-    private static final int DAYS_BEFORE_EXPIRY = 30; // 만료일 알람 날짜
-    private WatchService watchService;
 
-    public SSLCertificateReloader() throws Exception {
-        // 초기 SSLContext 로드
-        reloadCertificate();
-        // WatchService를 사용하여 파일 변경 감지
-        startScheduledCertificateCheck();
-    }
+### 작동
+1. 애플리케이션 시작 시 SSLCertificateReloader 생성자 호출
+2. reloadCertificate() : 키스토어에서 인증서를 로드하고, SSLContext를 초기화
+3. startScheduledCertificateCheck() : WatchService를 설정하여 인증서 파일 변경을 감지시작
+4. checkCertificate() : @@Scheduled에 의해 1시간 마다 인증서 체크
+   - WatchService에서 변경, 만료 감지
+   - 변경 : reloadCertificate를 통해 SSL 재로드
+   - 만료 : checkCertificateExpiry 호출해서 만료여부 체크
+5. checkCertificateExpiry : 만료일 30일 이내인 경우 generateNewP12File()로 재생성하고 reloadCertificate 호출
+6. 애플리케이션 종료시 : onDestroy()로 watchservice 종료
 
-    private void startScheduledCertificateCheck() {
-        // 주기적으로 인증서 변경 및 만료 여부를 체크합니다.
-        Path certPath = Paths.get("src/main/resources/keystore-local.p12");
-        try {
-            watchService = FileSystems.getDefault().newWatchService();
-            certPath.getParent().register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Scheduled(fixedRate = 3600000) // 1시간마다 실행 (밀리초 단위)
-    private void checkCertificate() {
-        try {
-            WatchKey key;
-            while ((key = watchService.poll()) != null) {
-                for (WatchEvent<?> event : key.pollEvents()) {
-                    if (event.context().toString().equals("keystore-local.p12")) {
-                        reloadCertificate();
-                    }
-                }
-                key.reset();
-            }
-            // 만료 여부 체크
-            checkCertificateExpiry();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void reloadCertificate() {
-        lock.writeLock().lock();
-        try {
-            ClassPathResource resource = new ClassPathResource("keystore-local.p12");
-
-            try (InputStream inputStream = resource.getInputStream()) {
-                KeyStore keyStore = KeyStore.getInstance("PKCS12");
-                keyStore.load(inputStream, "password1!".toCharArray());
-
-                SSLContext tempContext = SSLContext.getInstance("TLS");
-                tempContext.init(null, null, null);
-
-                this.sslContext = tempContext;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            lock.writeLock().unlock();
-        }
-    }
-
-    private void checkCertificateExpiry() {
-        lock.readLock().lock();
-        try {
-            ClassPathResource resource = new ClassPathResource("keystore-local.p12");
-
-            try (InputStream inputStream = resource.getInputStream()) {
-                KeyStore keyStore = KeyStore.getInstance("PKCS12");
-                keyStore.load(inputStream, "password1!".toCharArray());
-
-                String alias = keyStore.aliases().nextElement();
-                Certificate certificate = keyStore.getCertificate(alias);
-
-                if (certificate instanceof X509Certificate) {
-                    X509Certificate x509Cert = (X509Certificate) certificate;
-                    Date notAfter = x509Cert.getNotAfter();
-                    Date currentDate = new Date();
-
-                    long diffInMillies = notAfter.getTime() - currentDate.getTime();
-                    long diffInDays = diffInMillies / (1000 * 60 * 60 * 24);
-
-                    if (diffInDays <= DAYS_BEFORE_EXPIRY) {
-                        System.out.println("SSL 인증서가 " + diffInDays + "일 후 만료됩니다. 새로운 .p12 파일을 생성합니다.");
-                        // 새로운 p12 파일을 생성
-                        generateNewP12File("src/main/resources/new-certificate.crt",
-                                "src/main/resources/new-private-key.key",
-                                "src/main/resources/keystore-local.p12",
-                                "password1!");
-                        reloadCertificate(); // 새로 생성한 p12 파일로 SSLContext를 다시 로드
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            lock.readLock().unlock();
-        }
-    }
-
-    private void generateNewP12File(String certPath, String keyPath, String outputP12Path, String password) throws Exception {
-        // 인증서 로드
-        CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
-        try (InputStream certInputStream = Files.newInputStream(Paths.get(certPath))) {
-            X509Certificate cert = (X509Certificate) certFactory.generateCertificate(certInputStream);
-
-            // 개인 키 로드
-            String keyPEM = new String(Files.readAllBytes(Paths.get(keyPath)))
-                    .replace("-----BEGIN PRIVATE KEY-----", "")
-                    .replace("-----END PRIVATE KEY-----", "")
-                    .replaceAll("\\s", "");
-            byte[] decodedKey = Base64.getDecoder().decode(keyPEM);
-
-            PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(decodedKey);
-            KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-            PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
-
-            // 키스토어에 인증서와 키를 저장
-            KeyStore keyStore = KeyStore.getInstance("PKCS12");
-            keyStore.load(null, null); // 새로운 빈 키스토어 생성
-            keyStore.setKeyEntry("alias", privateKey, password.toCharArray(), new Certificate[]{cert});
-
-            // p12 파일로 저장
-            try (FileOutputStream outputStream = new FileOutputStream(outputP12Path)) {
-                keyStore.store(outputStream, password.toCharArray());
-            }
-        }
-    }
-
-    @PreDestroy
-    public void onDestroy() {
-        try {
-            if (watchService != null) {
-                watchService.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public SSLContext getSSLContext() {
-        lock.readLock().lock();
-        try {
-            return sslContext;
-        } finally {
-            lock.readLock().unlock();
-        }
-    }
-}
-```
 
 
