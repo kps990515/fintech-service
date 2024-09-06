@@ -10,6 +10,8 @@ import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
 import org.payment.api.payments.service.model.TransactionGetRequestVO;
 import org.payment.api.payments.service.model.TransactionVO;
+import org.redisson.api.RLockReactive;
+import org.redisson.api.RedissonReactiveClient;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -33,6 +35,7 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Base64;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class TossPaymentsService {
@@ -43,14 +46,18 @@ public class TossPaymentsService {
     private final TossPaymentsConfig tossPaymentsConfig;
     private final CircuitBreaker circuitBreaker;
     private final Retry retry;
+    private final RedissonReactiveClient redissonReactiveClient;
+
 
 
     @Autowired
     public TossPaymentsService(WebClient.Builder webClientBuilder, TossPaymentsConfig tossPaymentsConfig,
-                               CircuitBreaker circuitBreaker, Retry retry) {
+                               CircuitBreaker circuitBreaker, Retry retry, RedissonReactiveClient redissonReactiveClient) {
+
         this.tossPaymentsConfig = tossPaymentsConfig;
         this.circuitBreaker = circuitBreaker;
         this.retry = retry;
+        this.redissonReactiveClient = redissonReactiveClient;
 
         // Connection Provider 설정
         ConnectionProvider connectionProvider = ConnectionProvider.builder("custom")
@@ -76,42 +83,69 @@ public class TossPaymentsService {
     }
 
     public Mono<PaymentServiceConfirmResponseVO> sendPaymentConfirmRequest(PaymentServiceConfirmRequestVO requestVO) {
+        String lockName = "paymentConfirmLock:" + requestVO.getPaymentKey();
+        RLockReactive lock = redissonReactiveClient.getLock(lockName);
+
         String credentials = tossPaymentsConfig.getSecretKey() + ":"; // Secret key에 ":"를 추가
         String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
 
-        return Mono.defer(() -> webClient.post() //Mono.defer()을 통해 호출시마다 새로운 mono생성해 독립적 요청 처리 보장
-                        .uri(tossPaymentsConfig.getBaseUrl() + "/payments/confirm")
-                        .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
-                        .header("Content-Type", tossPaymentsConfig.getContentType())
-                        .bodyValue(requestVO)
-                        .retrieve()
-                        .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), this::handleError)
-                        .bodyToMono(PaymentServiceConfirmResponseVO.class))
-                .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)) // 전역 Circuit Breaker 적용
-                .transformDeferred(RetryOperator.of(retry)) // Retry 적용
-                .subscribeOn(Schedulers.boundedElastic())  // mono의 비동기 작업을 boundedElastic 스케줄러에서 처리
-                .doOnError(throwable -> {
-                    if (!(throwable instanceof RuntimeException)) {
-                        log.error("confirm API 에러 발생", throwable); // handleError에서 잡지않은 RuntimeException만 잡기
-                    }
-                });
+        // 비동기적으로 락을 획득하는 동안, 다른 작업을 논블로킹으로 진행
+        Mono<Void> backgroundTask = Mono.fromRunnable(() -> log.info("비동기 백그라운드 작업 진행 중..."))
+                .subscribeOn(Schedulers.parallel()) // 메인 쓰레드와 별개로 병렬 쓰레드풀에서 실행
+                .then(); // Mono<Void>반환해 이후 작업에 결합
+
+        return backgroundTask.then(  // 백그라운드 작업이 완료된 후 메인 로직 실행
+                lock.tryLock(0, 5, TimeUnit.SECONDS)  // 락을 시도하고 최대 5초 대기
+                        .flatMap(isLocked -> {
+                            if (isLocked) {
+                                // 락을 획득한 경우 원래 로직 실행
+                                return webClient.post()
+                                        .uri(tossPaymentsConfig.getBaseUrl() + "/payments/confirm")
+                                        .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
+                                        .header("Content-Type", tossPaymentsConfig.getContentType())
+                                        .bodyValue(requestVO)
+                                        .retrieve()
+                                        .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), this::handleError)
+                                        .bodyToMono(PaymentServiceConfirmResponseVO.class)
+                                        .transformDeferred(CircuitBreakerOperator.of(circuitBreaker))
+                                        .transformDeferred(RetryOperator.of(retry));
+                            } else {
+                                // 락을 획득하지 못한 경우 대체 로직 실행
+                                log.warn("Lock 획득 실패, 다른 처리 진행");
+                                return Mono.just(new PaymentServiceConfirmResponseVO());  // 대체 응답
+                            }
+                        })
+                        .doFinally(signalType -> {
+                            // 락 해제는 리액티브 방식으로 처리
+                            lock.unlock().subscribe();
+                        })
+                        .subscribeOn(Schedulers.boundedElastic())
+                        .doOnError(throwable -> {
+                            if (!(throwable instanceof RuntimeException)) {
+                                log.error("confirm API 에러 발생", throwable);
+                            }
+                        })
+        );
     }
 
+
     public Mono<List<TransactionVO>> getTransaction(TransactionGetRequestVO requestVO) {
+        String lockName = "transactionLock:" + requestVO.getStartDate();
+        RLockReactive lock = redissonReactiveClient.getLock(lockName);
+
         String credentials = tossPaymentsConfig.getSecretKey() + ":"; // Secret key에 ":"를 추가
         String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes(StandardCharsets.UTF_8));
 
-        return Mono.defer(() -> webClient.get()
+        return lock.lock(5, TimeUnit.SECONDS)
+                .flatMap(ignored -> webClient.get()
                         .uri(uriBuilder -> {
-                            uriBuilder
-                                    .path(tossPaymentsConfig.getBaseUrl() + "/v1/transactions")
+                            uriBuilder.path(tossPaymentsConfig.getBaseUrl() + "/v1/transactions")
                                     .queryParam("startDate", requestVO.getStartDate())
                                     .queryParam("endDate", requestVO.getEndDate());
-                            // Optional parameters 처리
                             if (requestVO.getStartingAfter() != null) {
                                 uriBuilder.queryParam("startingAfter", requestVO.getStartingAfter());
                             }
-                            if (requestVO.getLimit() > 0) { // 기본값을 0으로 가정하고 양수인 경우에만 설정
+                            if (requestVO.getLimit() > 0) {
                                 uriBuilder.queryParam("limit", requestVO.getLimit());
                             }
                             return uriBuilder.build();
@@ -120,13 +154,13 @@ public class TossPaymentsService {
                         .retrieve()
                         .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), this::handleError)
                         .bodyToMono(new ParameterizedTypeReference<List<TransactionVO>>() {})
-                )
-                .transformDeferred(RetryOperator.of(retry)) // Retry 적용 (먼저)
-                .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)) // Circuit Breaker 적용 (나중)
-                .subscribeOn(Schedulers.boundedElastic()) // 비동기 작업을 boundedElastic 스케줄러에서 처리
+                        .transformDeferred(RetryOperator.of(retry))
+                        .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)))
+                .doFinally(signalType -> lock.unlock().subscribe())
+                .subscribeOn(Schedulers.boundedElastic())
                 .doOnError(throwable -> {
                     if (!(throwable instanceof RuntimeException)) {
-                        log.error("Transaction API 에러 발생", throwable); // handleError에서 처리하지 않은 에러 처리
+                        log.error("Transaction API 에러 발생", throwable);
                     }
                 });
     }

@@ -21,13 +21,35 @@
   
 2. URI 빌더를 사용한 동적 URI 설정(Get에서 많이 사용)
 ```java
-.uri(uriBuilder -> {
-        uriBuilder
-        .path("/v1/transactions")
-        .queryParam("startDate", requestVO.getStartDate())
-        .queryParam("endDate", requestVO.getEndDate());
-     return uriBuilder.build();
-}) 
+  return Mono.defer(() -> webClient.get()
+                  .uri(uriBuilder -> {
+                      uriBuilder
+                              .path(tossPaymentsConfig.getBaseUrl() + "/v1/transactions")
+                              .queryParam("startDate", requestVO.getStartDate())
+                              .queryParam("endDate", requestVO.getEndDate());
+                      // Optional parameters 처리
+                      if (requestVO.getStartingAfter() != null) {
+                          uriBuilder.queryParam("startingAfter", requestVO.getStartingAfter());
+                      }
+                      if (requestVO.getLimit() > 0) { // 기본값을 0으로 가정하고 양수인 경우에만 설정
+                          uriBuilder.queryParam("limit", requestVO.getLimit());
+                      }
+                      return uriBuilder.build();
+                  })
+                  .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
+                  .retrieve()
+                  .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), this::handleError)
+                  .bodyToMono(new ParameterizedTypeReference<List<TransactionVO>>() {})
+          )
+          .transformDeferred(RetryOperator.of(retry)) // Retry 적용 (먼저)
+          .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)) // Circuit Breaker 적용 (나중)
+          .subscribeOn(Schedulers.boundedElastic()) // 비동기 작업을 boundedElastic 스케줄러에서 처리
+          .doOnError(throwable -> {
+              if (!(throwable instanceof RuntimeException)) {
+                  log.error("Transaction API 에러 발생", throwable); // handleError에서 처리하지 않은 에러 처리
+              }
+          });
+}
 ```
 - 장점 : 동적 파라미터를 유연하게 처리하기 쉬움
 - 단점 : 코드가 복잡함

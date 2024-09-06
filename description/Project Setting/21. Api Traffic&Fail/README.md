@@ -61,14 +61,22 @@ public TossPaymentsService(WebClient.Builder webClientBuilder, TossPaymentsConfi
 
 ```java
 return Mono.defer(() -> webClient.post() //Mono.defer()을 통해 호출시마다 새로운 mono생성해 독립적 요청 처리 보장
-                .uri(tossPaymentsConfig.getBaseUrl() + "/v1/payments/confirm")
+                .uri(tossPaymentsConfig.getBaseUrl() + "/payments/confirm")
                 .header("Authorization", tossPaymentsConfig.getAuthorizationType() + " " + encodedAuth)
                 .header("Content-Type", tossPaymentsConfig.getContentType())
                 .bodyValue(requestVO)
                 .retrieve()
                 .onStatus(status -> status.is4xxClientError() || status.is5xxServerError(), this::handleError)
                 .bodyToMono(PaymentServiceConfirmResponseVO.class))
-        .subscribeOn(Schedulers.boundedElastic());  // mono의 비동기 작업을 boundedElastic 스케줄러에서 처리
+        .transformDeferred(CircuitBreakerOperator.of(circuitBreaker)) // 전역 Circuit Breaker 적용
+        .transformDeferred(RetryOperator.of(retry)) // Retry 적용
+        .subscribeOn(Schedulers.boundedElastic())  // mono의 비동기 작업을 boundedElastic 스케줄러에서 처리
+        .doOnError(throwable -> {
+            if (!(throwable instanceof RuntimeException)) {
+                log.error("confirm API 에러 발생", throwable); // handleError에서 잡지않은 RuntimeException만 잡기
+            }
+        });
+}
 ```
 
 ### 3. CircuitBreaker & Retry 적용
