@@ -16,17 +16,29 @@ spring:
     store-type: redis
     timeout: 1800s # 세션 타임아웃 설정 (30분)
 
+  mail:
+    host: smtp.gmail.com # gmail로 설정
+    port: 587
+    username: kps990515@gmail.com
+    password: bvjg roha grok dhrb
+    properties:
+      mail.smtp.debug: true
+      mail.smtp.connectiontimeout: 1000 #1초
+      mail.starttls.enable: true
+      mail.smtp.starttls.enable: true
+
 
 logging:
   config: classpath:logback-local.xml
 
 server:
-  port: 8443
   ssl:
     key-store: classpath:keystore-local.p12
     key-store-password: password1!
-    key-store-type: PKCS12
     key-alias: myalias
+    key-password: password1!
+    key-store-type: PKCS12
+  port : 8443
 
 toss:
   payments:

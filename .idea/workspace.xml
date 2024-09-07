@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="API 분산 락 적용">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/db/redis/RedissonConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/27. API Distribution Lock/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLConfigProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/application-2024-09-03.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/21. Api Traffic&amp;Fail/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/21. Api Traffic&amp;Fail/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/26. Get API/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/26. Get API/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/db/redis/RedissonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/db/redis/RedissonConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLCertificateReloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLCertificateReloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +107,9 @@
       <recent name="D:\sideProject\fintech-service\description\Project Setting\8. Jenkins" />
       <recent name="D:\sideProject\fintech-service" />
       <recent name="D:\sideProject\fintech-service\api\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.payment.api.payments.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.payment.api.payments.service.model" />
@@ -196,8 +204,31 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="fintech-service:api [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/api" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.fintech-service:api [clean]" />
         <item itemvalue="Gradle.fintech-service [clean]" />
         <item itemvalue="Gradle.TossPaymentControllerTest" />
         <item itemvalue="Gradle.PaymentControllerTest.confirmPayment_success" />

@@ -20,6 +20,7 @@ public class UserService {
 
     private final UserRdbRepository userRdbRepository;
     private final UserMapper userMapper;
+    private final EmailService emailService; // 예시로 이메일 발송 서비스
 
     public void login(LoginRequest loginRequest, HttpSession httpSession){
         String email = loginRequest.getEmail();
@@ -56,6 +57,9 @@ public class UserService {
 
         UserEntity newUser = userMapper.toUserEntity(requestVO);
         userRdbRepository.save(newUser);
+
+        // 비동기 이메일 발송
+        emailService.sendWelcomeEmailAsync(newUser.getEmail());
 
         return requestVO.getEmail();
     }

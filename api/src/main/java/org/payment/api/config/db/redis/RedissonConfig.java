@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Value;
 @Configuration
 public class RedissonConfig {
 
-    @Value("${redis.host}")
+    @Value("${spring.redis.host}")
     private String redisHost;
 
-    @Value("${redis.port}")
+    @Value("${spring.redis.port}")
     private int redisPort;
 
     @Bean

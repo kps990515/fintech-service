@@ -1,0 +1,780 @@
+2024-09-03 23:03:59.094 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:03:59.094 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:03:59.151 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 2088 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:03:59.151 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 2088 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:03:59.152 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:03:59.152 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:03:59.153 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:03:59.153 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:03:59.775 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:03:59.775 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:03:59.776 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:03:59.776 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:03:59.933 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.   
+2024-09-03 23:03:59.933 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 147 ms. Found 1 JPA repository interface.   
+2024-09-03 23:03:59.974 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:03:59.974 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:03:59.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:03:59.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:03:59.988 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:03:59.988 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:03:59.989 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:03:59.989 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:00.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:00.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:00.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:04:00.229 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:04:00.241 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:00.241 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:01.044 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:04:01.044 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:04:01.054 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:04:01.054 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:04:01.060 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:04:01.060 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:04:01.060 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:04:01.060 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:04:01.137 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:04:01.137 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:04:01.138 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1916 ms   
+2024-09-03 23:04:01.138 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1916 ms   
+2024-09-03 23:04:01.296 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:04:01.296 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:04:01.385 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:04:01.385 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:04:01.431 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:04:01.431 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:04:01.709 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:04:01.709 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:04:01.737 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:04:01.737 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:04:02.835 [main] ERROR com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Exception during pool initialization.   
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.payment.api.ApiApplication.main(ApiApplication.java:13)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:104)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:165)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:88)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 49 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62)
+	... 52 common frames omitted
+2024-09-03 23:04:02.835 [main] ERROR com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Exception during pool initialization.   
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.payment.api.ApiApplication.main(ApiApplication.java:13)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:104)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:165)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:88)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 49 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62)
+	... 52 common frames omitted
+2024-09-03 23:04:02.837 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator
+                - HHH000342: Could not obtain connection to query metadata   
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.payment.api.ApiApplication.main(ApiApplication.java:13)
+2024-09-03 23:04:02.837 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator
+                - HHH000342: Could not obtain connection to query metadata   
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.payment.api.ApiApplication.main(ApiApplication.java:13)
+2024-09-03 23:04:02.841 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)   
+2024-09-03 23:04:02.841 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)   
+2024-09-03 23:04:02.842 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext
+                - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)   
+2024-09-03 23:04:02.842 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext
+                - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)   
+2024-09-03 23:04:02.844 [main] INFO  o.a.catalina.core.StandardService
+                - Stopping service [Tomcat]   
+2024-09-03 23:04:02.844 [main] INFO  o.a.catalina.core.StandardService
+                - Stopping service [Tomcat]   
+2024-09-03 23:04:02.855 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger
+                - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.   
+2024-09-03 23:04:02.855 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger
+                - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.   
+2024-09-03 23:04:02.877 [main] ERROR o.s.boot.SpringApplication
+                - Application run failed   
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.payment.api.ApiApplication.main(ApiApplication.java:13)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:348)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 31 common frames omitted
+2024-09-03 23:04:02.877 [main] ERROR o.s.boot.SpringApplication
+                - Application run failed   
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1234)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.payment.api.ApiApplication.main(ApiApplication.java:13)
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 16 common frames omitted
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:348)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	... 31 common frames omitted
+2024-09-03 23:04:33.010 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:04:33.010 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:04:33.044 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 20460 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:04:33.044 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 20460 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:04:33.044 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:04:33.044 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:04:33.045 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:04:33.045 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:04:33.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:33.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:33.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:04:33.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:04:33.680 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interface.   
+2024-09-03 23:04:33.680 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interface.   
+2024-09-03 23:04:33.715 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:33.715 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:33.715 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:04:33.715 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:04:33.727 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:04:33.727 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:04:33.727 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:33.727 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:33.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:33.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:04:33.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:04:33.905 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:04:33.912 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:33.912 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:04:34.612 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:04:34.612 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:04:34.622 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:04:34.622 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:04:34.628 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:04:34.628 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:04:34.628 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:04:34.628 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:04:34.695 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:04:34.695 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:04:34.696 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1595 ms   
+2024-09-03 23:04:34.696 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1595 ms   
+2024-09-03 23:04:34.822 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:04:34.822 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:04:34.875 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:04:34.875 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:04:34.911 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:04:34.911 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:04:35.104 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:04:35.104 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:04:35.126 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:04:35.126 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:04:35.291 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b974137   
+2024-09-03 23:04:35.291 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2b974137   
+2024-09-03 23:04:35.293 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.   
+2024-09-03 23:04:35.293 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.   
+2024-09-03 23:04:36.178 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)   
+2024-09-03 23:04:36.178 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)   
+2024-09-03 23:04:36.271 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'   
+2024-09-03 23:04:36.271 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'   
+2024-09-03 23:04:37.355 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning   
+2024-09-03 23:04:37.355 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning   
+2024-09-03 23:04:37.585 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:04:37.585 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:04:37.741 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null]   
+2024-09-03 23:04:37.741 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null]   
+2024-09-03 23:04:37.751 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path ''   
+2024-09-03 23:04:37.751 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path ''   
+2024-09-03 23:04:37.760 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 5.195 seconds (process running for 5.624)   
+2024-09-03 23:04:37.760 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 5.195 seconds (process running for 5.624)   
+2024-09-03 23:12:06.505 [https-jsse-nio-8443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'   
+2024-09-03 23:12:06.505 [https-jsse-nio-8443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'   
+2024-09-03 23:12:06.505 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'   
+2024-09-03 23:12:06.505 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'   
+2024-09-03 23:12:06.506 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms   
+2024-09-03 23:12:06.506 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms   
+2024-09-03 23:12:06.547 [https-jsse-nio-8443-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver
+                - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public reactor.core.publisher.Mono<org.springframework.http.ResponseEntity<org.payment.api.payments.controller.model.PaymentConfirmResponse>> org.payment.api.payments.controller.TossPaymentsController.getTransaction(org.payment.api.payments.model.vo.TransactionRequest)] TX-2438fb62-e865-4df3-8353-2ae646d5fbb9 0:0:0:0:0:0:0:1 /api/payments/v1/transactions
+2024-09-03 23:12:06.547 [https-jsse-nio-8443-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver
+                - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public reactor.core.publisher.Mono<org.springframework.http.ResponseEntity<org.payment.api.payments.controller.model.PaymentConfirmResponse>> org.payment.api.payments.controller.TossPaymentsController.getTransaction(org.payment.api.payments.model.vo.TransactionRequest)] TX-2438fb62-e865-4df3-8353-2ae646d5fbb9 0:0:0:0:0:0:0:1 /api/payments/v1/transactions
+2024-09-03 23:12:06.548 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - >>>>> uri : /api/payments/v1/transactions, method : GET, header : [host : localhost:8443] [connection : keep-alive] [___internal-request-id : 13c8729c-9f77-4544-9970-756a56b22cf1] [sec-ch-ua : "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"] [sec-ch-ua-mobile : ?0] [sec-ch-ua-platform : "Windows"] [accept : */*] [sec-fetch-site : none] [sec-fetch-mode : cors] [sec-fetch-dest : empty] [accept-encoding : gzip, deflate, br, zstd] [accept-language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7] , body :    
+2024-09-03 23:12:06.548 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - >>>>> uri : /api/payments/v1/transactions, method : GET, header : [host : localhost:8443] [connection : keep-alive] [___internal-request-id : 13c8729c-9f77-4544-9970-756a56b22cf1] [sec-ch-ua : "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"] [sec-ch-ua-mobile : ?0] [sec-ch-ua-platform : "Windows"] [accept : */*] [sec-fetch-site : none] [sec-fetch-mode : cors] [sec-fetch-dest : empty] [accept-encoding : gzip, deflate, br, zstd] [accept-language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7] , body :    
+2024-09-03 23:12:06.549 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    
+2024-09-03 23:12:06.549 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    
+2024-09-03 23:16:43.858 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:16:43.858 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final   
+2024-09-03 23:16:43.894 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 13304 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:16:43.894 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 13304 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service)   
+2024-09-03 23:16:43.895 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:16:43.895 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5   
+2024-09-03 23:16:43.896 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:16:43.896 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local"   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:16:44.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode.   
+2024-09-03 23:16:44.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.   
+2024-09-03 23:16:44.707 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 175 ms. Found 1 JPA repository interface.   
+2024-09-03 23:16:44.751 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.751 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.752 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.752 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository   
+2024-09-03 23:16:44.765 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:44.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.967 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode   
+2024-09-03 23:16:44.968 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode.   
+2024-09-03 23:16:44.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:44.975 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.   
+2024-09-03 23:16:45.690 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:16:45.690 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https)   
+2024-09-03 23:16:45.700 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:45.700 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:16:45.705 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19]   
+2024-09-03 23:16:45.776 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:16:45.776 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext   
+2024-09-03 23:16:45.777 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1829 ms   
+2024-09-03 23:16:45.777 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 1829 ms   
+2024-09-03 23:16:45.908 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:16:45.908 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default]   
+2024-09-03 23:16:45.952 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:16:45.952 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final   
+2024-09-03 23:16:45.990 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:16:45.990 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled   
+2024-09-03 23:16:46.188 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:16:46.188 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer   
+2024-09-03 23:16:46.208 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:16:46.208 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting...   
+2024-09-03 23:16:46.344 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eb6037d   
+2024-09-03 23:16:46.344 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1eb6037d   
+2024-09-03 23:16:46.348 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.   
+2024-09-03 23:16:46.348 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed.   
+2024-09-03 23:16:47.089 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)   
+2024-09-03 23:16:47.089 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)   
+2024-09-03 23:16:47.121 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'   
+2024-09-03 23:16:47.121 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default'   
+2024-09-03 23:16:48.087 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning   
+2024-09-03 23:16:48.087 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning   
+2024-09-03 23:16:48.299 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:48.299 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"]   
+2024-09-03 23:16:48.453 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null]   
+2024-09-03 23:16:48.453 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null]   
+2024-09-03 23:16:48.461 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path ''   
+2024-09-03 23:16:48.461 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path ''   
+2024-09-03 23:16:48.469 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 5.068 seconds (process running for 5.447)   
+2024-09-03 23:16:48.469 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 5.068 seconds (process running for 5.447)   
+2024-09-03 23:16:51.445 [https-jsse-nio-8443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'   
+2024-09-03 23:16:51.445 [https-jsse-nio-8443-exec-9] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring DispatcherServlet 'dispatcherServlet'   
+2024-09-03 23:16:51.446 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'   
+2024-09-03 23:16:51.446 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Initializing Servlet 'dispatcherServlet'   
+2024-09-03 23:16:51.447 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms   
+2024-09-03 23:16:51.447 [https-jsse-nio-8443-exec-9] INFO  o.s.web.servlet.DispatcherServlet
+                - Completed initialization in 1 ms   
+2024-09-03 23:16:51.575 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - >>>>> uri : /api/payments/v1/transactions, method : GET, header : [host : localhost:8443] [connection : keep-alive] [___internal-request-id : 8e869b9f-e9c3-4002-b423-89e3c020c28b] [sec-ch-ua : "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"] [sec-ch-ua-mobile : ?0] [sec-ch-ua-platform : "Windows"] [accept : */*] [sec-fetch-site : none] [sec-fetch-mode : cors] [sec-fetch-dest : empty] [accept-encoding : gzip, deflate, br, zstd] [accept-language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7] , body :    
+2024-09-03 23:16:51.575 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - >>>>> uri : /api/payments/v1/transactions, method : GET, header : [host : localhost:8443] [connection : keep-alive] [___internal-request-id : 8e869b9f-e9c3-4002-b423-89e3c020c28b] [sec-ch-ua : "Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"] [sec-ch-ua-mobile : ?0] [sec-ch-ua-platform : "Windows"] [accept : */*] [sec-fetch-site : none] [sec-fetch-mode : cors] [sec-fetch-dest : empty] [accept-encoding : gzip, deflate, br, zstd] [accept-language : ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7] , body :    
+2024-09-03 23:16:51.576 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    
+2024-09-03 23:16:51.576 [https-jsse-nio-8443-exec-9] INFO  o.p.a.config.web.filter.LoggerFilter
+                - <<<<< uri : /api/payments/v1/transactions, method : GET, header : , body :    

@@ -1,7 +1,6 @@
 package org.payment.api.config.security;
 
 import jakarta.annotation.PreDestroy;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -30,22 +29,11 @@ public class SSLCertificateReloader {
     private static final int DAYS_BEFORE_EXPIRY = 30;
     private WatchService watchService;
 
-    @Value("${server.ssl.key-store}")
-    private String keystorePath;
+    private final SSLConfigProperties sslConfigProperties; // SSLConfigProperties 주입
 
-    @Value("${server.ssl.key-store-password}")
-    private String keystorePassword;
-
-    @Value("${server.ssl.key-alias}")
-    private String keyAlias;
-
-    @Value("${server.ssl.key-password:#{null}}") // 키 비밀번호는 프로필에 따라 없을 수 있으므로 optional로 처리
-    private String keyPassword;
-
-    @Value("${server.ssl.key-store-type}")
-    private String keystoreType;
-
-    public SSLCertificateReloader() throws Exception {
+    // SSLConfigProperties를 주입받는 생성자
+    public SSLCertificateReloader(SSLConfigProperties sslConfigProperties) throws Exception {
+        this.sslConfigProperties = sslConfigProperties;
         // 애플리케이션 시작 시 초기 SSL 설정 로드
         reloadCertificate();
         // 인증서 변경 감지를 위한 WatchService 설정
@@ -56,7 +44,7 @@ public class SSLCertificateReloader {
     private void startScheduledCertificateCheck() {
         try {
             watchService = FileSystems.getDefault().newWatchService();
-            Path certPath = Paths.get(keystorePath);
+            Path certPath = Paths.get("D:\\sideProject\\fintech-service\\api\\src\\main\\resources\\keystore-local.p12"); // keystorePath를 SSLConfigProperties에서 가져옴
             // 파일이 위치한 디렉토리에 파일 변경 이벤트 등록 (ENTRY_MODIFY: 파일이 수정될 때 감지)
             certPath.getParent().register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
         } catch (Exception e) {
@@ -74,7 +62,7 @@ public class SSLCertificateReloader {
             // WatchService에서 파일 변경 이벤트가 있는지 확인
             while ((key = watchService.poll()) != null) {
                 for (WatchEvent<?> event : key.pollEvents()) {
-                    if (event.context().toString().equals(Paths.get(keystorePath).getFileName().toString())) {
+                    if (event.context().toString().equals(Paths.get(sslConfigProperties.getKeyStore()).getFileName().toString())) {
                         certificateChanged = true;
                         reloadCertificate(); // 인증서 변경 시 재로드
                     }
@@ -98,7 +86,7 @@ public class SSLCertificateReloader {
         try {
             KeyStore keyStore = loadKeyStore();
             KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-            kmf.init(keyStore, keyPassword != null ? keyPassword.toCharArray() : keystorePassword.toCharArray());
+            kmf.init(keyStore, sslConfigProperties.getKeyPassword() != null ? sslConfigProperties.getKeyPassword().toCharArray() : sslConfigProperties.getKeyStorePassword().toCharArray());
 
             SSLContext tempContext = SSLContext.getInstance("TLS");
             tempContext.init(kmf.getKeyManagers(), null, null);
@@ -123,7 +111,7 @@ public class SSLCertificateReloader {
                 System.out.println("SSL 인증서가 " + diffInDays + "일 후 만료됩니다. 새로운 .p12 파일을 생성합니다.");
                 generateNewP12File("src/main/resources/new-certificate.crt",
                         "src/main/resources/new-private-key.key",
-                        keystorePath, keystorePassword);
+                        sslConfigProperties.getKeyStore(), sslConfigProperties.getKeyStorePassword());
                 reloadCertificate();
             }
         } catch (Exception e) {
@@ -135,10 +123,10 @@ public class SSLCertificateReloader {
 
     // KeyStore 로드
     private KeyStore loadKeyStore() throws Exception {
-        ClassPathResource resource = new ClassPathResource(keystorePath);
+        ClassPathResource resource = new ClassPathResource("keystore-local.p12");
         try (InputStream inputStream = resource.getInputStream()) {
-            KeyStore keyStore = KeyStore.getInstance(keystoreType);
-            keyStore.load(inputStream, keystorePassword.toCharArray());
+            KeyStore keyStore = KeyStore.getInstance(sslConfigProperties.getKeyStoreType());
+            keyStore.load(inputStream, sslConfigProperties.getKeyStorePassword().toCharArray());
             return keyStore;
         }
     }
@@ -197,4 +185,3 @@ public class SSLCertificateReloader {
         }
     }
 }
-
