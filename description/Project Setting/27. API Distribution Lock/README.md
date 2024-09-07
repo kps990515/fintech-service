@@ -25,11 +25,11 @@
 @Configuration
 public class RedissonConfig {
 
-    @Value("${redis.host}")
-    private String redisHost;
+   @Value("${spring.redis.host}")
+   private String redisHost;
 
-    @Value("${redis.port}")
-    private int redisPort;
+   @Value("${spring.redis.port}")
+   private int redisPort;
 
     @Bean
     public RedissonClient redissonClient() {

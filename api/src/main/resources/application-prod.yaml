@@ -3,9 +3,10 @@ server:
   ssl:
     key-store: classpath:keystore-prod.p12
     key-store-password: password1!
-    key-password: password1!
     key-alias: tomcat
-
+    key-password: password1!
+    #trust-store: classpath:truststore-local.jks
+    #trust-store-password: password1!
 spring:
   jpa:
     show-sql: false

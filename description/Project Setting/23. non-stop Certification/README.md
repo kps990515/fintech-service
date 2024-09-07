@@ -82,15 +82,63 @@ sudo certbot renew --dry-run
 
 
 ### 작동
-1. 애플리케이션 시작 시 SSLCertificateReloader 생성자 호출
-2. reloadCertificate() : 키스토어에서 인증서를 로드하고, SSLContext를 초기화
-3. startScheduledCertificateCheck() : WatchService를 설정하여 인증서 파일 변경을 감지시작
-4. checkCertificate() : @@Scheduled에 의해 1시간 마다 인증서 체크
+1. SSLConfigProperties로 yaml 세팅 가져오기 : 이상하게 @Value가 안되서
+```java
+@Component
+@ConfigurationProperties(prefix = "server.ssl")
+@Getter
+@Setter
+public class SSLConfigProperties {
+    private String keyStore;
+    private String keyStorePassword;
+    private String keyAlias;
+    private String keyPassword;
+    private String keyStoreType;
+}
+```
+2. 애플리케이션 시작 시 SSLCertificateReloader 생성자 호출
+```java
+public SSLCertificateReloader(SSLConfigProperties sslConfigProperties) throws Exception {
+    this.sslConfigProperties = sslConfigProperties;
+    // 애플리케이션 시작 시 초기 SSL 설정 로드
+    reloadCertificate();
+    // 인증서 변경 감지를 위한 WatchService 설정
+    startScheduledCertificateCheck();
+    } 
+```
+4. startScheduledCertificateCheck() : WatchService를 설정하여 인증서 파일 변경을 감지시작
+5. checkCertificate() : @@Scheduled에 의해 1시간 마다 인증서 체크
    - WatchService에서 변경, 만료 감지
    - 변경 : reloadCertificate를 통해 SSL 재로드
    - 만료 : checkCertificateExpiry 호출해서 만료여부 체크
 5. checkCertificateExpiry : 만료일 30일 이내인 경우 generateNewP12File()로 재생성하고 reloadCertificate 호출
 6. 애플리케이션 종료시 : onDestroy()로 watchservice 종료
 
+### 문제점(Local)
+- Local에서 하면 공인된 인증서 cert? 문제로 인해 C드라이브 administration.keystore가 없다고 나옴
 
+### 해결법
+1. SSL사용하는 클래스에 로컬기동 제외하기
+```java
+@Component
+@Profile("!local")
+public class SSLCertificateReloader
+
+@Component
+@Profile("!local")
+@ConfigurationProperties(prefix = "server.ssl")
+```
+
+2. prod-yaml에만 설정하기
+```yaml
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore-prod.p12
+    key-store-password: password1!
+    key-alias: tomcat
+    key-password: password1!
+    #trust-store: classpath:truststore-local.jks
+    #trust-store-password: password1! 
+```
 

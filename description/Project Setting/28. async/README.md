@@ -16,3 +16,64 @@
 | **블로킹 여부**         | 논블로킹                                      | 논블로킹                               | 비동기지만 블로킹 가능                |
 
 
+### 사용 : 가입시 @Async로 가입완료 이메일 발송
+1. build.gradle
+```yaml
+implementation 'org.springframework.boot:spring-boot-starter-mail'
+```
+  
+2. yaml
+```yaml
+  mail:
+    host: smtp.gmail.com # gmail로 설정
+    port: 587
+    username: kps990515@gmail.com
+    password: bvjg roha grok dhrb
+    properties:
+      mail.smtp.debug: true
+      mail.smtp.connectiontimeout: 1000 #1초
+      mail.starttls.enable: true
+      mail.smtp.starttls.enable: true  
+```
+
+```java
+public String registerUser(UserRegisterServiceRequestVO requestVO) {
+    userRdbRepository.findByEmail(requestVO.getEmail())
+            .ifPresent(user -> {
+                throw new ExistUserFoundException();
+            });
+
+    UserEntity newUser = userMapper.toUserEntity(requestVO);
+    userRdbRepository.save(newUser);
+
+    // 비동기 이메일 발송
+    emailService.sendWelcomeEmailAsync(newUser.getEmail());
+
+    return requestVO.getEmail();
+}
+```
+- @Async함수
+```java
+@Service
+@RequiredArgsConstructor
+public class EmailService {
+
+    private final JavaMailSender emailSender;
+
+    @Async
+    public void sendWelcomeEmailAsync(String to) {
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(to);
+            message.setSubject("환영합니다!");
+            message.setText("회원 가입을 축하드립니다!");
+
+            emailSender.send(message);
+            System.out.println("비동기 이메일 전송 완료");
+        } catch (MailException e) {
+            // 예외 처리 로직 추가 (로깅 등)
+            System.err.println("이메일 전송 중 오류 발생: " + e.getMessage());
+        }
+    }
+}
+```

@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="API 분산 락 적용">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLConfigProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/application-2024-09-03.log" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="async함수 적용">
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/keystore.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/resources/truststore-local.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/db/redis/RedissonConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/db/redis/RedissonConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLCertificateReloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLCertificateReloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-local.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/security/SSLConfigProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/23. non-stop Certification/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/23. non-stop Certification/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/27. API Distribution Lock/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/27. API Distribution Lock/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +82,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/description/Project Setting&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/api/src/main/resources&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -96,10 +94,10 @@
       <recent name="org.payment.api.payments.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
       <recent name="D:\sideProject\fintech-service\description\Project Setting" />
       <recent name="D:\sideProject\fintech-service\description\etc" />
       <recent name="D:\sideProject\fintech-service\api" />
-      <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\sideProject\fintech-service\description" />
@@ -243,14 +241,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00016" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723830479228</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1723830479228</updated>
     </task>
     <task id="LOCAL-00017" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -636,7 +626,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725548589948</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="API 분산 락 적용">
+      <option name="closed" value="true" />
+      <created>1725683884698</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1725683884698</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -676,7 +674,8 @@
     <MESSAGE value="Get Api 만들기" />
     <MESSAGE value="무중단 인증서 갱신" />
     <MESSAGE value="API 분산 락 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="API 분산 락 적용" />
+    <MESSAGE value="async함수 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="async함수 적용" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

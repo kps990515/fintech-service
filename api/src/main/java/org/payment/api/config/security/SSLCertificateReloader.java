@@ -1,6 +1,7 @@
 package org.payment.api.config.security;
 
 import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,7 @@ import java.util.Date;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 @Component
+@Profile("!local")
 public class SSLCertificateReloader {
 
     private SSLContext sslContext;
@@ -44,9 +46,19 @@ public class SSLCertificateReloader {
     private void startScheduledCertificateCheck() {
         try {
             watchService = FileSystems.getDefault().newWatchService();
-            Path certPath = Paths.get("D:\\sideProject\\fintech-service\\api\\src\\main\\resources\\keystore-local.p12"); // keystorePath를 SSLConfigProperties에서 가져옴
-            // 파일이 위치한 디렉토리에 파일 변경 이벤트 등록 (ENTRY_MODIFY: 파일이 수정될 때 감지)
-            certPath.getParent().register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
+
+            // 인증서 경로와 파일을 확인
+            Path certPath;
+            if (!sslConfigProperties.getKeyStore().startsWith("classpath:")) {
+                // 파일 시스템 경로일 경우 WatchService 설정
+                certPath = Paths.get(sslConfigProperties.getKeyStore());
+
+                // 인증서 파일이 위치한 디렉토리에서 변경 감지 설정
+                certPath.getParent().register(watchService, StandardWatchEventKinds.ENTRY_MODIFY);
+            } else {
+                // 클래스패스 리소스는 WatchService로 감지할 수 없기 때문에 로그로 처리
+                System.out.println("WatchService를 사용할 수 없습니다. Classpath 리소스는 변경 감지에서 제외됩니다.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,8 +121,7 @@ public class SSLCertificateReloader {
 
             if (diffInDays <= DAYS_BEFORE_EXPIRY) {
                 System.out.println("SSL 인증서가 " + diffInDays + "일 후 만료됩니다. 새로운 .p12 파일을 생성합니다.");
-                generateNewP12File("src/main/resources/new-certificate.crt",
-                        "src/main/resources/new-private-key.key",
+                generateNewP12File(
                         sslConfigProperties.getKeyStore(), sslConfigProperties.getKeyStorePassword());
                 reloadCertificate();
             }
@@ -123,8 +134,18 @@ public class SSLCertificateReloader {
 
     // KeyStore 로드
     private KeyStore loadKeyStore() throws Exception {
-        ClassPathResource resource = new ClassPathResource("keystore-local.p12");
-        try (InputStream inputStream = resource.getInputStream()) {
+        InputStream inputStream;
+
+        if (sslConfigProperties.getKeyStore().startsWith("classpath:")) {
+            // 클래스패스 리소스를 사용하여 InputStream을 얻어옴
+            ClassPathResource resource = new ClassPathResource(sslConfigProperties.getKeyStore().replace("classpath:", ""));
+            inputStream = resource.getInputStream();
+        } else {
+            // 파일 시스템의 절대 경로에서 InputStream을 얻어옴
+            inputStream = Files.newInputStream(Paths.get(sslConfigProperties.getKeyStore()));
+        }
+
+        try (inputStream) {
             KeyStore keyStore = KeyStore.getInstance(sslConfigProperties.getKeyStoreType());
             keyStore.load(inputStream, sslConfigProperties.getKeyStorePassword().toCharArray());
             return keyStore;
@@ -140,12 +161,12 @@ public class SSLCertificateReloader {
     }
 
     // 새로운 p12 파일 생성 로직
-    private void generateNewP12File(String certPath, String keyPath, String outputP12Path, String password) throws Exception {
+    private void generateNewP12File(String outputP12Path, String password) throws Exception {
         CertificateFactory certFactory = CertificateFactory.getInstance("X.509");
-        try (InputStream certInputStream = Files.newInputStream(Paths.get(certPath))) {
+        try (InputStream certInputStream = Files.newInputStream(Paths.get("src/main/resources/new-certificate.crt"))) {
             X509Certificate cert = (X509Certificate) certFactory.generateCertificate(certInputStream);
 
-            String keyPEM = new String(Files.readAllBytes(Paths.get(keyPath)))
+            String keyPEM = new String(Files.readAllBytes(Paths.get("src/main/resources/new-private-key.key")))
                     .replace("-----BEGIN PRIVATE KEY-----", "")
                     .replace("-----END PRIVATE KEY-----", "")
                     .replaceAll("\\s", "");
