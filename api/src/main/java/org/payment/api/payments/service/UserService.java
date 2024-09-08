@@ -1,17 +1,23 @@
 package org.payment.api.payments.service;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.payment.api.common.exception.ExistUserFoundException;
 import org.payment.api.common.exception.InvalidSessionException;
 import org.payment.api.common.exception.UserNotFoundException;
 import org.payment.api.common.util.ObjectConvertUtil;
+import org.payment.api.config.web.interceptor.JpaQueryInterceptor;
 import org.payment.api.payments.controller.model.LoginRequest;
 import org.payment.api.payments.service.mapper.UserMapper;
 import org.payment.api.payments.service.model.UserRegisterServiceRequestVO;
 import org.payment.api.payments.service.model.UserVO;
 import org.payment.db.user.UserEntity;
 import org.payment.db.user.UserRdbRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +27,8 @@ public class UserService {
     private final UserRdbRepository userRdbRepository;
     private final UserMapper userMapper;
     private final EmailService emailService; // 예시로 이메일 발송 서비스
+    @Autowired
+    private EntityManagerFactory entityManagerFactory;
 
     public void login(LoginRequest loginRequest, HttpSession httpSession){
         String email = loginRequest.getEmail();
@@ -50,17 +58,32 @@ public class UserService {
     }
 
     public String registerUser(UserRegisterServiceRequestVO requestVO) {
-        userRdbRepository.findByEmail(requestVO.getEmail())
-                .ifPresent(user -> {
-                    throw new ExistUserFoundException();
-                });
+        // try-with-resources사용해서 entityManager & Hibernate Session/Interceptor 생성
+        try (EntityManager entityManager = entityManagerFactory.createEntityManager();
+             Session session = entityManager.unwrap(Session.class).getSessionFactory().withOptions()
+                     .statementInspector(new JpaQueryInterceptor())  // 특정 세션에 StatementInspector 적용
+                     .openSession()) {
 
-        UserEntity newUser = userMapper.toUserEntity(requestVO);
-        userRdbRepository.save(newUser);
+            Transaction transaction = session.beginTransaction();  // 트랜잭션 시작
 
-        // 비동기 이메일 발송
-        emailService.sendWelcomeEmailAsync(newUser.getEmail());
+            userRdbRepository.findByEmail(requestVO.getEmail())
+                    .ifPresent(user -> {
+                        throw new ExistUserFoundException();
+                    });
 
-        return requestVO.getEmail();
+            UserEntity newUser = userMapper.toUserEntity(requestVO);
+            session.persist(newUser);  // Hibernate 세션을 통해 저장
+
+            transaction.commit();  // 트랜잭션 커밋
+
+            // 비동기 이메일 발송
+            emailService.sendWelcomeEmailAsync(newUser.getEmail());
+
+            return requestVO.getEmail();
+
+        } catch (Exception e) {
+            // 트랜잭션 롤백
+            throw new RuntimeException("Error during registration", e);
+        }
     }
 }

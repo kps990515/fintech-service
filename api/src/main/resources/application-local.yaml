@@ -5,6 +5,16 @@ spring:
     username: root
     password: root1234!!
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect  # MySQL 버전에 맞는 Dialect 사용
+        show_sql: true  # SQL 쿼리를 출력
+        session_factory:
+          statement_inspector: org.payment.api.config.web.interceptor.JpaQueryInterceptor
+
   redis:
     host: 127.0.0.1
     port: 6379
@@ -26,7 +36,6 @@ spring:
       mail.smtp.connectiontimeout: 1000 #1초
       mail.starttls.enable: true
       mail.smtp.starttls.enable: true
-
 
 logging:
   config: classpath:logback-local.xml

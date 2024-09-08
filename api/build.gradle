@@ -34,6 +34,8 @@ dependencies {
 
     implementation 'org.redisson:redisson-spring-boot-starter:3.20.0'
 
+    implementation 'mysql:mysql-connector-java:8.0.30'
+
     implementation 'io.github.resilience4j:resilience4j-spring-boot2:1.7.0'
     implementation 'io.github.resilience4j:resilience4j-circuitbreaker:1.7.1'
     implementation 'io.github.resilience4j:resilience4j-reactor:2.1.0'

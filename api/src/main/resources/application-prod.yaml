@@ -9,12 +9,14 @@ server:
     #trust-store-password: password1!
 spring:
   jpa:
-    show-sql: false
-    properties:
-      format_sql: true
-      dialect: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect  # MySQL 버전에 맞는 Dialect 사용
+        show_sql: true  # SQL 쿼리를 출력
+        session_factory:
+          statement_inspector: org.payment.api.config.web.interceptor.JpaQueryInterceptor
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
