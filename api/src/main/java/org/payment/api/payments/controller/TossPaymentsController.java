@@ -20,6 +20,7 @@ public class TossPaymentsController {
     private final TossPaymentsService tossPaymentsService;
 
     @PostMapping("/v1/confirm")
+    //(TODO) 다른 페이먼트사도 할 수 있게 확장성 고려
     public Mono<ResponseEntity<PaymentConfirmResponse>> confirmPayment(@RequestBody PaymentConfirmRequest requestVO) {
         PaymentServiceConfirmRequestVO serviceVo = ObjectConvertUtil.copyVO(requestVO, PaymentServiceConfirmRequestVO.class);
 

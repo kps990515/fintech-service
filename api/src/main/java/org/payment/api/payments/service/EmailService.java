@@ -14,6 +14,7 @@ public class EmailService {
     private final JavaMailSender emailSender;
 
     @Async
+    //(TODO) UserService 개별함수로 들어갔을때에도 async로 동작할 것인가
     public void sendWelcomeEmailAsync(String to) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();

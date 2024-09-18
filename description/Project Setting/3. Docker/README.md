@@ -75,5 +75,22 @@ services:
       - "8080:8080"
 ```
 
+2. docker image생성
+   - mysql
+   ```shell
+   docker run -d --name mysql_container `
+   -e MYSQL_ROOT_PASSWORD=root1234!! `
+   -p 3306:3306 `
+   --restart unless-stopped `
+   mysql:8.0
+   ```
+   - redis
+   ```shell
+   docker run -d --name redis_container `
+   -p 6379:6379 `
+   --restart unless-stopped `
+   redis:alpine
+   ```
+
 
 

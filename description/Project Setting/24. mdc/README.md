@@ -6,9 +6,11 @@
 ## 방법
 1. logback.xml 패턴 추가
 - transactionId, clientIp, requestURI
+- thread별로 할당, ThreadLocal변수로 사용, Thread종료 시 MDC가 다 사라짐
+- clear를 하는 이유는 threadPool을 사용해서 thread 재사용시 같은 데이터를 사용가능성 있음, Memory누수 방지
 ```xml
 <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}
-    - %msg %X{transactionId} %X{clientIp} %X{requestURI}%n</pattern>
+    - %msgn %X{transactioId} %X{clientIp} %X{requestURI}%n</pattern>
 ```
 
   
