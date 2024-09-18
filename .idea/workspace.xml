@@ -4,22 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="slow query 모니터링">
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/30.kafka-docker-setting/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/31.kafka-zookeeper-setting/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/32.kafka-cassandra/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/33.adapter-pattern-pg/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/34. feign/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/35. docker-msa/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/36.kafka-event-driven/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/application-2024-09-08.log" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="kafka">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/CustomWebClientException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/WebClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/FilterConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/DefaultPGService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGServiceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/37.PG-Adapter적용/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/38.공통PG서비스클래스/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/application-2024-09-15.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/service/TossPaymentsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/service/TossPaymentsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/MDCFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/MDCFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/PaymentConfirmRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/PaymentConfirmRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/TransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/TransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/org/payment/api/payments/controller/TossPaymentControllerTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/description/Project Setting/24. mdc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/24. mdc/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/26. Get API/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/26. Get API/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/3. Docker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/3. Docker/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/etc/KakaoPayPayment/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/etc/KakaoPayPayment/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +100,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.infernus.idea.checkstyle.CheckStyleConfigurable&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -128,7 +136,7 @@
     <configuration name="ApiApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.payment.api.ApiApplication" />
       <module name="fintech-service.api.main" />
-      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=local" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=local -Dfile.encoding=UTF-8" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.payment.api.*" />
@@ -253,6 +261,14 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.ApiApplication" />
+      <item itemvalue="Gradle.fintech-service [clean]" />
+      <item itemvalue="Gradle.fintech-service:api [build]" />
+      <item itemvalue="Gradle.fintech-service:api [clean]" />
+      <item itemvalue="Gradle.PaymentControllerTest.confirmPayment_success" />
+      <item itemvalue="Gradle.TossPaymentControllerTest" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.fintech-service:api [clean]" />
@@ -271,14 +287,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00019" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723831283241</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1723831283241</updated>
     </task>
     <task id="LOCAL-00020" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -664,7 +672,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725804728395</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="kafka">
+      <option name="closed" value="true" />
+      <created>1726630849547</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1726630849548</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -680,7 +696,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="멀티profile 적용" />
     <MESSAGE value="토스 결제승인 API" />
     <MESSAGE value="EC2 cicd 테스트" />
     <MESSAGE value="ec2테스트" />
@@ -705,7 +720,8 @@
     <MESSAGE value="API 분산 락 적용" />
     <MESSAGE value="async함수 적용" />
     <MESSAGE value="slow query 모니터링" />
-    <option name="LAST_COMMIT_MESSAGE" value="slow query 모니터링" />
+    <MESSAGE value="kafka" />
+    <option name="LAST_COMMIT_MESSAGE" value="kafka" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

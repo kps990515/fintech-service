@@ -18,7 +18,8 @@
         </rollingPolicy>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}
-                - %msg %X{transactionId} %X{clientIp} %X{requestURI}%n</pattern>
+                - %msg [transactionId=%X{transactionId}] [clientIp=%X{clientIp}] [requestURI=%X{requestURI}]%n</pattern>
+            <charset>UTF-8</charset> <!-- 인코딩 설정 추가 -->
         </encoder>
     </appender>
 
@@ -26,7 +27,8 @@
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36}
-                - %msg %X{transactionId} %X{clientIp} %X{requestURI}%n</pattern>
+                - %msg [transactionId=%X{transactionId}] [clientIp=%X{clientIp}] [requestURI=%X{requestURI}]%n</pattern>
+            <charset>UTF-8</charset> <!-- 인코딩 설정 추가 -->
         </encoder>
     </appender>
 

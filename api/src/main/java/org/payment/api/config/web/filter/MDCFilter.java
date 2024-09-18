@@ -1,22 +1,17 @@
 package org.payment.api.config.web.filter;
 
+import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.MDC;
-import org.springframework.stereotype.Component;
-import jakarta.servlet.*;
+
 import java.io.IOException;
 import java.util.UUID;
 
-@Component
 public class MDCFilter implements Filter {
 
     private static final String TRANSACTION_ID_KEY = "transactionId";
     private static final String CLIENT_IP_KEY = "clientIp";
     private static final String REQUEST_URI_KEY = "requestURI";
-
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -37,7 +32,4 @@ public class MDCFilter implements Filter {
         }
     }
 
-    @Override
-    public void destroy() {
-    }
 }

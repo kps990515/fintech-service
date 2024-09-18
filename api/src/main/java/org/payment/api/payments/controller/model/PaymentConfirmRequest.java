@@ -11,4 +11,5 @@ public class PaymentConfirmRequest {
     private String paymentKey ;
     private String orderId;
     private BigDecimal amount;
+    private String PG;
 }
