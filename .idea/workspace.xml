@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="kafka">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/CustomWebClientException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/WebClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/FilterConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/DefaultPGService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGServiceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/37.PG-Adapter적용/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/38.공통PG서비스클래스/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/application-2024-09-15.log" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="리팩토링">
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/39.Redis Cluster/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/40.Redis 기본타입,명령어/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/41.Redis Local/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/42.Redis Test 및 장애/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/LineOpenChat/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/Resume/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/common/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/service/TossPaymentsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/service/TossPaymentsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/LoggerFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/MDCFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/web/filter/MDCFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/TossPaymentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/PaymentConfirmRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/controller/model/PaymentConfirmRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/TransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/model/vo/TransactionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/logback-local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/org/payment/api/payments/controller/TossPaymentControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/16. Redis/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/16. Redis/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description/Project Setting/24. mdc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/24. mdc/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/28. async/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,9 +94,9 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\sideProject\fintech-service\description\Project Setting" />
+      <recent name="D:\sideProject\fintech-service\description\etc" />
       <recent name="D:\sideProject\fintech-service\api\src\main\java\org\payment\api" />
       <recent name="D:\sideProject\fintech-service\api\src\main\resources" />
-      <recent name="D:\sideProject\fintech-service\description\etc" />
       <recent name="D:\sideProject\fintech-service\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -287,14 +272,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00020" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723831370194</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1723831370194</updated>
     </task>
     <task id="LOCAL-00021" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -680,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726630849548</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="리팩토링">
+      <option name="closed" value="true" />
+      <created>1726663004148</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1726663004149</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -696,7 +681,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="토스 결제승인 API" />
     <MESSAGE value="EC2 cicd 테스트" />
     <MESSAGE value="ec2테스트" />
     <MESSAGE value="dockerfile" />
@@ -721,7 +705,8 @@
     <MESSAGE value="async함수 적용" />
     <MESSAGE value="slow query 모니터링" />
     <MESSAGE value="kafka" />
-    <option name="LAST_COMMIT_MESSAGE" value="kafka" />
+    <MESSAGE value="리팩토링" />
+    <option name="LAST_COMMIT_MESSAGE" value="리팩토링" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
