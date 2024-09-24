@@ -1,6 +1,6 @@
 ## Kafka : Distributed Message Platform
 
-- 목적 : Event/Message 전송
+- 목적 : Event/Message 전송,소비(동시에 produce, consume가능)
 - 장점 : 고가용성 / 빠른처리
 - 단점 : 순서보장 어려움 / 아주 작게 사용이 어려움
 - 특징
@@ -40,9 +40,9 @@
 3. Kafka Cluser : 3개이상 Kafka Instance위에 -> Kafka Broker 생성 그 위에 -> topic 저장
    - Kafka Instance 중에 하나는 Controller(리더)역할
 4. 데이터 구조
-  - Broker 0 : Topic A(Partition 1): Leader / TopicA(Partition 2) : Follower
-  - Broker 1 : Topic A(Partition 2): Leader / TopicA(Partition 3) : Follower
-  - Broker 2 : Topic A(Partition 3): Leader / TopicA(Partition 1) : Follower
+  - Broker 0 : Topic A(Partition 1): Leader / TopicA(Partition 2) : Follower(Broker1의 리더 Follow)
+  - Broker 1 : Topic A(Partition 2): Leader / TopicA(Partition 3) : Follower(Broker2의 리더 Follow)
+  - Broker 2 : Topic A(Partition 3): Leader / TopicA(Partition 1) : Follower(Broker0의 리더 Follow)
 
 ## Kafka와 비슷한 애들
 - Rabbit MQ : 장점(경량, 유연한방식), 단점(대규모 데이터 처리 어려움, 디스크에 데이터 저장 안함)

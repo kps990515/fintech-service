@@ -50,7 +50,7 @@ public class KafkaConfig {
 }
 ```
 
-### Stream 서비스
+### Stream 기본 서비스
 ```java
 @Service
 public class StreamService {
@@ -63,34 +63,44 @@ public class StreamService {
         KStream<String, String> myStream = sb.stream("default", Consumed.with(STRING_SERDE, STRING_SERDE));
         // "default1"라는 값이 있으면 "test" Topic으로 전송
         myStream.filter((key, value)-> value.contains("default1")).to("test");
-
-        KStream<String, String> leftStream = sb.stream("leftTopic",
-                Consumed.with(STRING_SERDE, STRING_SERDE));
-        // key:value --> 1:leftValue
-        KStream<String, String> rightStream = sb.stream("rightTopic",
-                Consumed.with(STRING_SERDE, STRING_SERDE));
-        // key:value --> 1:rightValue
-
-        ValueJoiner<String, String, String> stringJoiner = (leftValue, rightValue) -> {
-            return "[StringJoiner]" + leftValue + "-" + rightValue;
-        };
-
-        ValueJoiner<String, String, String> stringOuterJoiner = (leftValue, rightValue) -> {
-            return "[StringOuterJoiner]" + leftValue + "<" + rightValue;
-        };
-
-        KStream<String, String> joinedStream = leftStream.join(rightStream,
-                stringJoiner,
-                JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofSeconds(10)));
-
-        KStream<String, String> outerJoinedStream = leftStream.outerJoin(rightStream,
-                stringOuterJoiner,
-                JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofSeconds(10)));
-
-        joinedStream.print(Printed.toSysOut());
-        joinedStream.to("joinedMsg");
-        outerJoinedStream.to("joinedMsg");
     }
 }
 ```
 
+### Stream Join 서비스
+- JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofSeconds(10))) 
+  - 특정 시간 범위 내에서만 두 스트림의 레코드를 조인할 수 있도록 제한(10초)
+1. Inner Join
+   - 두개의 값이 만났을때 데이터가 생성
+```java
+ValueJoiner<String, String, String> stringJoiner = (leftValue, rightValue) -> {
+    return "[StringJoiner]" + leftValue + "-" + rightValue;
+};
+
+KStream<String, String> joinedStream = leftStream.join(rightStream,
+        stringJoiner,
+        JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofSeconds(10)));
+```
+2. Left Join
+   - Left값이 생기는 순간 데이터 생성
+```java
+ValueJoiner<String, String, String> stringLeftJoiner = (leftValue, rightValue) -> {
+    return "[StringLeftJoiner]" + leftValue + "-> {" + (rightValue != null ? rightValue : "null") + "}";
+};
+
+KStream<String, String> leftJoinedStream = leftStream.leftJoin(rightStream,
+        stringLeftJoiner,
+        JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofSeconds(10))); 
+```
+
+3. Full Outer Join
+   - Left나 Right 값이 생기는 순간 데이터 생성
+```java
+ValueJoiner<String, String, String> stringOuterJoiner = (leftValue, rightValue) -> {
+    return "[StringOuterJoiner]" + leftValue + "+" + rightValue;
+};
+
+KStream<String, String> outerJoinedStream = leftStream.outerJoin(rightStream,
+        stringOuterJoiner,
+        JoinWindows.ofTimeDifferenceWithNoGrace(Duration.ofSeconds(10))); 
+```

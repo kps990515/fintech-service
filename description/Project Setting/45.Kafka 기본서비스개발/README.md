@@ -9,6 +9,30 @@ implementation 'org.springframework.kafka:spring-kafka
 - Producer : 기본적으로 한개로도(단일작업으로도) 다수의 메시지 전송 가능
 - Consumer : 병렬처리로 메시지를 소비(높은처리량, 부하 분산, 확장성)
   - ConcurrentKafkaListenerContainerFactory : 여러개의 Listener를 관리하는 Factory
+  - Group ID로 Consumer Group을 관리 -> 같은 Group내 Consumer는 서로 다른 Partition을 consume
+- Partition 할당전략
+  - RangeAssignor : 파티션을 범위로 나누어 할당(1,2/3,4/5,6) 
+    - 장점 : 연속적 파티션할당으로 데이터 일관성, Consumer와 파티션의 수가 비슷한 경우 간단 적용 가능 
+    - 단점 : Consumer와 파티션의 수가 다를 경우, 불균형 발생 가능
+  - RoundRobinAssignor : 균등분배 방식(0,3/1,4/2,5)
+    - 장점 : Consumer 파티션 수가 차이나도 Consumer가 고르게 파티션 처리 가능
+    - 단점 : 특정 파티션에 데이터가 많은 경우 불균형 발생, 고정된 파티션<->consumer 설정 불가(둘다 RangeAssigner에도 적용)
+  - StickyAssignor : 최소 변경 할당 -> Partition추가 시 기존을 최대한 유지하면서 재분배 
+    - 장점 : 파티션 재할당을 최소화하여 Consumer 그룹의 안정성을 유지, 재할당 성능 저하 방지
+    - 단점 : 시간이 지나면서 최적의 균형이 무너질 수 있음
+
+```yaml
+spring:
+  kafka:
+    consumer:
+      group-id: spring-group
+      ## offset정보 없을때 어디서 부터 읽을지 옵션 : earlist(맨처음), latest(가장최근), none(에러발생)
+      auto-offset-reset: earliest 
+      properties:
+        ## 여기에 넣어도 되고 ConsumerConfig 클래스에 넣어도 되고
+        partition.assignment.strategy: org.apache.kafka.clients.consumer.RoundRobinAssignor
+```
+
 ```java
 @Configuration
 @EnableKafka
@@ -35,6 +59,7 @@ public class KafkaConfig {
     public ConsumerFactory<String, Object> ConsumerFactory() {
         Map<String, Object> myConfig = new HashMap<>();
         myConfig.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "13.125.129.151:9092, 3.39.236.110:9092, 13.125.110.158:9092");
+        myConfig.put(ConsumerConfig.PARTITION_ASSIGNMENT_STRATEGY_CONFIG, RoundRobinAssignor.class.getName());
         myConfig.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         myConfig.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         return new DefaultKafkaConsumerFactory<>(myConfig);
@@ -84,7 +109,7 @@ public class Producer {
 ```java
 @Service
 public class ConsumerService {
-    @KafkaListener(topics = "defaultTopic", groupId = "spring")
+    @KafkaListener(topics = "defaultTopic", groupId = "spring") //groupdId : Consumer GroupId
     public void consumer (String message) {
         System.out.printf("Subscribed :  %s%n", message);
     }
