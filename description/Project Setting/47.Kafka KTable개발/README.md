@@ -32,4 +32,4 @@ public class KTableService {
         joinedTable.toStream().to("joinedMsg");
     }
 }
-```
+``` 
