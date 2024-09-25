@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="kafka">
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/47.Kafka KTable개발/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/48. Kafka 실전/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/43.Kafka 개념/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/43.Kafka 개념/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/45.Kafka 기본서비스개발/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/45.Kafka 기본서비스개발/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/46.Kafka Kstream개발/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/46.Kafka Kstream개발/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,22 +265,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00022" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723832409511</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1723832409511</updated>
-    </task>
-    <task id="LOCAL-00023" summary="EC2 cicd 테스트">
-      <option name="closed" value="true" />
-      <created>1723839516894</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1723839516894</updated>
     </task>
     <task id="LOCAL-00024" summary="EC2 cicd 테스트">
       <option name="closed" value="true" />
@@ -661,7 +642,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727101445675</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="kafka">
+      <option name="closed" value="true" />
+      <created>1727187179652</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1727187179653</updated>
+    </task>
+    <task id="LOCAL-00072" summary="kafka">
+      <option name="closed" value="true" />
+      <created>1727187304275</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1727187304275</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
