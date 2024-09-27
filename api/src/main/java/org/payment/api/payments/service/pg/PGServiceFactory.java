@@ -16,6 +16,7 @@ public class PGServiceFactory {
     @Autowired
     public PGServiceFactory(List<PGAdapter> PGServices) { //PGAdapter가 implement된 bean들은 자동으로 주입(toss 등)
         this.paymentServices = PGServices.stream()
+                //(TODO) service.getClass() -> DI로 주입받는방법으로 변경
                 .collect(Collectors.toMap(service -> service.getClass().getSimpleName(), service -> service));
     }
 
