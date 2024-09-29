@@ -7700,3 +7700,159 @@ Caused by: java.lang.IllegalMonitorStateException: attempt to unlock lock, not l
                 - <<<<< uri : /account/v1/register, method : POST, header : [Content-Length : 34] , body : 가입완료 : kps990515@gmail.com [transactionId=TX-2860fa58-ebb6-4767-9959-b23a880122b9] [clientIp=0:0:0:0:0:0:0:1] [requestURI=/account/v1/register]
 2024-09-29 19:17:52.398 [https-jsse-nio-8443-exec-8] INFO  o.p.a.config.web.filter.LoggerFilter
                 - <<<<< uri : /account/v1/register, method : POST, header : [Content-Length : 34] , body : 가입완료 : kps990515@gmail.com [transactionId=TX-2860fa58-ebb6-4767-9959-b23a880122b9] [clientIp=0:0:0:0:0:0:0:1] [requestURI=/account/v1/register]
+2024-09-29 22:02:11.234 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.234 [background-preinit] INFO  o.h.validator.internal.util.Version
+                - HV000001: Hibernate Validator 8.0.1.Final [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.279 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 14032 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.279 [main] INFO  org.payment.api.ApiApplication
+                - Starting ApiApplication using Java 17.0.10 with PID 14032 (D:\sideProject\fintech-service\api\build\classes\java\main started by Administrator in D:\sideProject\fintech-service) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.280 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.280 [main] DEBUG org.payment.api.ApiApplication
+                - Running with Spring Boot v3.2.4, Spring v6.1.5 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.281 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local" [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.281 [main] INFO  org.payment.api.ApiApplication
+                - The following 1 profile is active: "local" [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.950 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.950 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.951 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:11.951 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data JPA repositories in DEFAULT mode. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.158 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 199 ms. Found 1 JPA repository interface. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.158 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 199 ms. Found 1 JPA repository interface. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.195 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.195 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.196 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.196 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.208 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.208 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport
+                - Spring Data Redis - Could not safely identify store assignment for repository candidate interface org.payment.db.user.UserRdbRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.208 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.208 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.570 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.570 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Multiple Spring Data modules found, entering strict repository configuration mode [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.571 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Bootstrapping Spring Data Redis repositories in DEFAULT mode. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.584 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:12.584 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate
+                - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.474 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.474 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat initialized with port 8443 (https) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.485 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.485 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Initializing ProtocolHandler ["https-jsse-nio-8443"] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.492 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.492 [main] INFO  o.a.catalina.core.StandardService
+                - Starting service [Tomcat] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.492 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.492 [main] INFO  o.a.catalina.core.StandardEngine
+                - Starting Servlet engine: [Apache Tomcat/10.1.19] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.572 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.572 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/]
+                - Initializing Spring embedded WebApplicationContext [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.573 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 2229 ms [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.573 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext
+                - Root WebApplicationContext: initialization completed in 2229 ms [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.893 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.893 [main] INFO  o.h.jpa.internal.util.LogHelper
+                - HHH000204: Processing PersistenceUnitInfo [name: default] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.941 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.941 [main] INFO  org.hibernate.Version
+                - HHH000412: Hibernate ORM core version 6.4.4.Final [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.976 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:13.976 [main] INFO  o.h.c.i.RegionFactoryInitiator
+                - HHH000026: Second-level cache disabled [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.202 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.202 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo
+                - No LoadTimeWeaver setup: ignoring JPA class transformer [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.230 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting... [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.230 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Starting... [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.364 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6edb2c7b [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.364 [main] INFO  com.zaxxer.hikari.pool.HikariPool
+                - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6edb2c7b [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.366 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.366 [main] INFO  com.zaxxer.hikari.HikariDataSource
+                - HikariPool-1 - Start completed. [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.409 [main] WARN  org.hibernate.orm.deprecation
+                - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:14.409 [main] WARN  org.hibernate.orm.deprecation
+                - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.178 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.178 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator
+                - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.214 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default' [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.214 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean
+                - Initialized JPA EntityManagerFactory for persistence unit 'default' [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.635 [main] INFO  org.redisson.Version
+                - Redisson 3.20.0 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.635 [main] INFO  org.redisson.Version
+                - Redisson 3.20.0 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.939 [redisson-netty-2-6] INFO  o.r.c.p.MasterPubSubConnectionPool
+                - 1 connections initialized for 127.0.0.1/127.0.0.1:6379 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.939 [redisson-netty-2-6] INFO  o.r.c.p.MasterPubSubConnectionPool
+                - 1 connections initialized for 127.0.0.1/127.0.0.1:6379 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.982 [redisson-netty-2-18] INFO  o.r.c.pool.MasterConnectionPool
+                - 24 connections initialized for 127.0.0.1/127.0.0.1:6379 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:15.982 [redisson-netty-2-18] INFO  o.r.c.pool.MasterConnectionPool
+                - 24 connections initialized for 127.0.0.1/127.0.0.1:6379 [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:16.568 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:16.568 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration
+                - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.030 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+                - Exposing 1 endpoint(s) beneath base path '/actuator' [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.030 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver
+                - Exposing 1 endpoint(s) beneath base path '/actuator' [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.082 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.082 [main] INFO  o.a.coyote.http11.Http11NioProtocol
+                - Starting ProtocolHandler ["https-jsse-nio-8443"] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.238 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.238 [main] INFO  o.a.t.u.net.NioEndpoint.certificate
+                - Connector [https-jsse-nio-8443], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\Administrator\.keystore] using alias [myalias] with trust store [null] [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.247 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path '' [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.247 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer
+                - Tomcat started on port 8443 (https) with context path '' [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.260 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 6.501 seconds (process running for 6.919) [transactionId=] [clientIp=] [requestURI=]
+2024-09-29 22:02:17.260 [main] INFO  org.payment.api.ApiApplication
+                - Started ApiApplication in 6.501 seconds (process running for 6.919) [transactionId=] [clientIp=] [requestURI=]
