@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.payment.api.common.exception.ExistUserFoundException;
@@ -15,18 +16,21 @@ import org.payment.api.payments.controller.model.LoginRequest;
 import org.payment.api.payments.service.mapper.UserMapper;
 import org.payment.api.payments.service.model.UserRegisterServiceRequestVO;
 import org.payment.api.payments.service.model.UserVO;
+import org.payment.common.UserRegisterEvent;
 import org.payment.db.user.UserEntity;
 import org.payment.db.user.UserRdbRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class UserService {
 
     private final UserRdbRepository userRdbRepository;
     private final UserMapper userMapper;
-    private final EmailService emailService; // 예시로 이메일 발송 서비스
+    private final ApplicationEventPublisher publisher;
     @Autowired
     private EntityManagerFactory entityManagerFactory;
 
@@ -76,8 +80,9 @@ public class UserService {
 
             transaction.commit();  // 트랜잭션 커밋
 
-            // 비동기 이메일 발송
-            emailService.sendWelcomeEmailAsync(newUser.getEmail());
+            // 이메일 발송 pub
+            publisher.publishEvent(new UserRegisterEvent(newUser.getEmail()));
+            log.info("publish complete, email: {}", newUser.getEmail());
 
             return requestVO.getEmail();
 

@@ -1,6 +1,7 @@
 package org.payment.api.payments.service.pg;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,10 +15,20 @@ public class PGServiceFactory {
     private final Map<String, PGAdapter> paymentServices;
 
     @Autowired
-    public PGServiceFactory(List<PGAdapter> PGServices) { //PGAdapter가 implement된 bean들은 자동으로 주입(toss 등)
-        this.paymentServices = PGServices.stream()
-                //(TODO) service.getClass() -> DI로 주입받는방법으로 변경
-                .collect(Collectors.toMap(service -> service.getClass().getSimpleName(), service -> service));
+    public PGServiceFactory(List<PGAdapter> PGServices) {
+        this.paymentServices = PGServices.stream().collect(Collectors.toMap(
+                        this::getQualifierValue,  // Qualifier 값을 키로 사용
+                        service -> service
+                ));
+    }
+
+    private String getQualifierValue(PGAdapter service) {
+        Qualifier qualifier = service.getClass().getAnnotation(Qualifier.class);
+        if (qualifier != null) {
+            return qualifier.value(); // @Qualifier의 값을 반환
+        } else {
+            throw new IllegalArgumentException("PGAdapter에 @Qualifier가 설정되지 않았습니다.");
+        }
     }
 
     public PGAdapter getPaymentService(String paymentProvider) {

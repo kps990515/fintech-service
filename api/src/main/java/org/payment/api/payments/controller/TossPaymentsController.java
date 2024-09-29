@@ -1,10 +1,12 @@
 package org.payment.api.payments.controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.payment.api.common.util.ObjectConvertUtil;
 import org.payment.api.payments.controller.model.PaymentConfirmRequest;
 import org.payment.api.payments.controller.model.PaymentConfirmResponse;
 import org.payment.api.payments.model.vo.TransactionRequest;
+import org.payment.api.payments.service.model.UserVO;
 import org.payment.api.payments.service.pg.PGServiceFactory;
 import org.payment.api.payments.service.TossPaymentsService;
 import org.payment.api.payments.service.pg.PGAdapter;
@@ -23,10 +25,13 @@ public class TossPaymentsController {
     private final PGServiceFactory PGServiceFactory;
 
     @PostMapping("/v1/confirm")
-    public Mono<ResponseEntity<PaymentConfirmResponse>> confirmPayment(@RequestBody PaymentConfirmRequest requestVO) {
+    public Mono<ResponseEntity<PaymentConfirmResponse>> confirmPayment(HttpSession httpSession,  @RequestBody PaymentConfirmRequest requestVO) {
         PaymentServiceConfirmRequestVO serviceVo = ObjectConvertUtil.copyVO(requestVO, PaymentServiceConfirmRequestVO.class);
 
-        PGAdapter pgAdapter = PGServiceFactory.getPaymentService(requestVO.getPG());
+        UserVO userVO = ObjectConvertUtil.copyVO(httpSession.getAttribute("USER_SESSION"), UserVO.class);
+        serviceVo.setEmail(userVO.getEmail());
+
+        PGAdapter pgAdapter = PGServiceFactory.getPaymentService(requestVO.getPg());
 
         return pgAdapter.sendPaymentConfirmRequest(serviceVo)
                 .map(response -> {
@@ -41,7 +46,7 @@ public class TossPaymentsController {
     public Mono<ResponseEntity<PaymentConfirmResponse>> getTransaction(@ModelAttribute TransactionRequest requestVO) {
         TransactionGetRequestVO serviceVo = ObjectConvertUtil.copyVO(requestVO, TransactionGetRequestVO.class);
 
-        PGAdapter pgAdapter = PGServiceFactory.getPaymentService(requestVO.getPG());
+        PGAdapter pgAdapter = PGServiceFactory.getPaymentService(requestVO.getPg());
 
         return pgAdapter.getTransaction(serviceVo)
                 .map(response -> {

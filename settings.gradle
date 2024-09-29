@@ -1,4 +1,6 @@
 rootProject.name = 'fintech-service'
 include 'api'
 include 'db'
+include 'alarm'
+include 'common'
 

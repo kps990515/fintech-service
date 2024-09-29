@@ -21,5 +21,5 @@ public class TransactionRequest {
 
     private String startingAfter;
     private int limit = 100; // 기본값 설정
-    private String PG;
+    private String pg;
 }

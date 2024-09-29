@@ -39,7 +39,10 @@ public abstract class DefaultPGService implements PGAdapter{
     // 비동기 락 해제
     protected void releaseLock(RedissonReactiveClient redissonReactiveClient, String lockName) {
         try {
-            redissonReactiveClient.getLock(lockName).unlock().subscribe();
+            redissonReactiveClient.getLock(lockName).unlock().subscribe(
+                    null,
+                    error -> log.error("Failed to release lock: {}", error.getMessage())
+            );
         } catch (Exception e) {
             log.error("Failed to release lock: {}", lockName, e);
         }
