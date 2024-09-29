@@ -7,6 +7,8 @@
 - 메모리 내에서 이벤트가 처리되며 저장은 지원하지 않음
 - 이벤트 클래스타입 기준으로 pub / sub
 
+## 멀티모듈설정하자 jenkins가 안돌았던 이유 : 로컬 dockerfile 수정을 안해서 alarm, common copy
+
 ### 사용법
 1. 이벤트 클래스 정의(ApplicationEvent 상속 OR VO로도 가능)
 - api, alarm모듈에서 사용할 수 있게 common모듈에 생성 및 implement

@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="springeventlistener">
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/49.Spring Evnet Litener/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/49.Spring Evnet Litener/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,14 +264,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00030" summary="ec2테스트">
-      <option name="closed" value="true" />
-      <created>1723899009694</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1723899009694</updated>
     </task>
     <task id="LOCAL-00031" summary="readme">
       <option name="closed" value="true" />
@@ -656,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727617205104</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="springeventlistener">
+      <option name="closed" value="true" />
+      <created>1727618536795</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1727618536795</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
