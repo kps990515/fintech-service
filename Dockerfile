@@ -12,6 +12,8 @@ COPY build.gradle settings.gradle ./
 # 하위 모듈의 Gradle 설정 파일 복사
 COPY api/build.gradle api/
 COPY db/build.gradle db/
+COPY common/build.gradle common/
+COPY alarm/build.gradle alarm/
 
 # 의존성 다운로드 (Gradle 캐시를 활용하여 속도 향상)
 RUN ./gradlew dependencies --no-daemon
@@ -19,6 +21,8 @@ RUN ./gradlew dependencies --no-daemon
 # 하위 모듈 소스 코드 복사
 COPY api/src api/src
 COPY db/src db/src
+COPY common/src common/src
+COPY alarm/src alarm/src
 
 # 애플리케이션 빌드 (모든 모듈 빌드)
 RUN ./gradlew clean build -x test --no-daemon
