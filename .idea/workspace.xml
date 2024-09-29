@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="springeventlistener">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,7 @@
       <recent name="org.payment.db.user" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ApiApplication">
+  <component name="RunManager" selected="Gradle.fintech-service [dependencies]">
     <configuration name="ApiApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.payment.api.ApiApplication" />
       <module name="fintech-service.api.main" />
@@ -124,30 +123,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="PaymentControllerTest.confirmPayment_success" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":api:test" />
-            <option value="--tests" />
-            <option value="&quot;org.payment.api.payments.controller.PaymentControllerTest.confirmPayment_success&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
     </configuration>
     <configuration name="TossPaymentControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -185,6 +160,28 @@
         <option name="taskNames">
           <list>
             <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="fintech-service [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -241,19 +238,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.ApiApplication" />
+      <item itemvalue="Gradle.fintech-service [dependencies]" />
       <item itemvalue="Gradle.fintech-service [clean]" />
       <item itemvalue="Gradle.fintech-service:api [build]" />
       <item itemvalue="Gradle.fintech-service:api [clean]" />
-      <item itemvalue="Gradle.PaymentControllerTest.confirmPayment_success" />
       <item itemvalue="Gradle.TossPaymentControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.fintech-service [dependencies]" />
         <item itemvalue="Gradle.fintech-service:api [clean]" />
         <item itemvalue="Gradle.fintech-service:api [build]" />
         <item itemvalue="Gradle.fintech-service [clean]" />
         <item itemvalue="Gradle.TossPaymentControllerTest" />
-        <item itemvalue="Gradle.PaymentControllerTest.confirmPayment_success" />
       </list>
     </recent_temporary>
   </component>
@@ -265,14 +262,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00028" summary="ec2테스트">
-      <option name="closed" value="true" />
-      <created>1723898523386</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1723898523386</updated>
     </task>
     <task id="LOCAL-00029" summary="ec2테스트">
       <option name="closed" value="true" />
@@ -658,7 +647,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727614467683</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="springeventlistener">
+      <option name="closed" value="true" />
+      <created>1727616787808</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1727616787808</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
