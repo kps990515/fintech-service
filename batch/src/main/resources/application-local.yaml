@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/fintech_service?useSSL=false&useUnicode=true&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root1234!!
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect  # MySQL 버전에 맞는 Dialect 사용
+        show_sql: true  # SQL 쿼리를 출력
+        session_factory:
+          statement_inspector: org.payment.api.config.web.interceptor.JpaQueryInterceptor
+
+  mail:
+    host: smtp.gmail.com # gmail로 설정
+    port: 587
+    username: kps990515@gmail.com
+    password: bvjg roha grok dhrb
+    properties:
+      mail.smtp.debug: true
+      mail.smtp.connectiontimeout: 1000 #1초
+      mail.starttls.enable: true
+      mail.smtp.starttls.enable: true
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    session:
+      store-type: redis
+      timeout: 1800s  # 세션 타임아웃 설정 (30분)

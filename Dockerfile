@@ -14,6 +14,7 @@ COPY api/build.gradle api/
 COPY db/build.gradle db/
 COPY common/build.gradle common/
 COPY alarm/build.gradle alarm/
+COPY batch/build.gradle batch/
 
 # 의존성 다운로드 (Gradle 캐시를 활용하여 속도 향상)
 RUN ./gradlew dependencies --no-daemon
@@ -23,6 +24,7 @@ COPY api/src api/src
 COPY db/src db/src
 COPY common/src common/src
 COPY alarm/src alarm/src
+COPY batch/src batch/src
 
 # 애플리케이션 빌드 (모든 모듈 빌드)
 RUN ./gradlew clean build -x test --no-daemon

@@ -1,39 +1,21 @@
 package org.payment.api.payments.service.pg;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
+@RequiredArgsConstructor
 public class PGServiceFactory {
 
-    private final Map<String, PGAdapter> paymentServices;
-
-    @Autowired
-    public PGServiceFactory(List<PGAdapter> PGServices) {
-        this.paymentServices = PGServices.stream().collect(Collectors.toMap(
-                        this::getQualifierValue,  // Qualifier 값을 키로 사용
-                        service -> service
-                ));
-    }
-
-    private String getQualifierValue(PGAdapter service) {
-        Qualifier qualifier = service.getClass().getAnnotation(Qualifier.class);
-        if (qualifier != null) {
-            return qualifier.value(); // @Qualifier의 값을 반환
-        } else {
-            throw new IllegalArgumentException("PGAdapter에 @Qualifier가 설정되지 않았습니다.");
-        }
-    }
+    private final List<PGAdapter> pgAdapterList;
 
     public PGAdapter getPaymentService(String paymentProvider) {
-        return Optional.ofNullable(paymentServices.get(paymentProvider))
-                .orElseThrow(() -> new IllegalArgumentException("지원되지 않는 결제사: " + paymentProvider));
+        // isAcceptable이 true인 PGAdapter를 찾음
+        return pgAdapterList.stream()
+                .filter(adapter -> adapter.isAcceptable(paymentProvider)) // 결제사와 일치하는 서비스 찾기
+                .findFirst() // 첫 번째로 일치하는 서비스 반환
+                .orElseThrow(() -> new IllegalArgumentException("지원되지 않는 결제사: " + paymentProvider)); // 없을 경우 예외 발생
     }
-
 }

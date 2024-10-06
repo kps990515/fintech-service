@@ -11,4 +11,5 @@ import java.util.List;
 public interface PGAdapter {
     Mono<PaymentServiceConfirmResponseVO> sendPaymentConfirmRequest(PaymentServiceConfirmRequestVO requestVO);
     Mono<List<TransactionVO>> getTransaction(TransactionGetRequestVO requestVO);
+    boolean isAcceptable(String type);
 }

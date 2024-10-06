@@ -3,4 +3,5 @@ include 'api'
 include 'db'
 include 'alarm'
 include 'common'
+include 'batch'
 

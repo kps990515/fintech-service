@@ -43,5 +43,20 @@ public class EmailService {
             System.err.println("이메일 전송 중 오류 발생: " + e.getMessage());
         }
     }
+
+    public void sendPasswordChangeEmail(String to) {
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(to);
+            message.setSubject("비밀번호 변경이 필요합니다");
+            message.setText("가입한지 30일이 지나 비밀번호 변경이 필요합니다");
+
+            emailSender.send(message);
+            System.out.println("비번 변경 이메일 전송 완료");
+        } catch (MailException e) {
+            // 예외 처리 로직 추가 (로깅 등)
+            System.err.println("비번 변경 이메일 전송 중 오류 발생: " + e.getMessage());
+        }
+    }
 }
 

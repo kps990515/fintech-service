@@ -119,4 +119,9 @@ public class TossPaymentsService extends DefaultPGService implements PGAdapter {
                     }
                 });
     }
+
+    @Override
+    public boolean isAcceptable(String paymentProvider) {
+        return "toss".equalsIgnoreCase(paymentProvider);
+    }
 }

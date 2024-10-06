@@ -42,6 +42,9 @@ public class UserEntity extends BaseEntity implements Persistable<String> {
     @Column(name = "joined_at", nullable = false)
     private LocalDateTime joinedAt;
 
+    @Column(name = "email_sent", nullable = false, columnDefinition = "TINYINT(1) DEFAULT 0")
+    private Boolean isPwModifySednYn = false;
+
     @Override
     @Transient
     // 새로운 Entity의 경우 insert, 아니면 update
