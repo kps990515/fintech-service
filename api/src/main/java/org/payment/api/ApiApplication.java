@@ -6,7 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-@SpringBootApplication(scanBasePackages = {"org.payment.api", "org.payment.db", "org.payment.alarm"})
+@SpringBootApplication(scanBasePackages = {"org.payment.api", "org.payment.db", "org.payment.alarm",
+                                            "org.payment.batch", "org.payment.common"})
 @ConfigurationPropertiesScan
 @EnableRedisRepositories(basePackages = "org.payment.db")
 @EnableAsync

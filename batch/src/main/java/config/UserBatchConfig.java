@@ -111,7 +111,11 @@ public class UserBatchConfig {
     public ItemProcessor<UserEntity, UserEntity> userProcessor() {
         return user -> {
             try {
-                emailService.sendPasswordChangeEmail(user.getEmail());  // 이메일 발송
+                // RetryTemplate을 사용해 이메일 발송 재시도 처리
+                retryTemplate().execute(context -> {
+                    emailService.sendPasswordChangeEmail(user.getEmail());  // 이메일 발송
+                    return null;
+                });
             } catch (Exception e) {
                 // 이메일 발송 실패 시 예외를 던져 Retry를 유도
                 throw new EmailRetryableException(user, e);
@@ -125,8 +129,12 @@ public class UserBatchConfig {
         return users -> {
             for (UserEntity user : users) {
                 try {
-                    user.setIsPwModifySednYn(true);  // 이메일 발송 성공 후 필드 업데이트
-                    userRdbRepository.save(user);    // 데이터베이스에 저장
+                    // RetryTemplate을 사용해 DB 업데이트 재시도 처리
+                    retryTemplate().execute(context -> {
+                        user.setIsPwModifySednYn(true);  // 이메일 발송 성공 후 필드 업데이트
+                        userRdbRepository.save(user);    // 데이터베이스에 저장
+                        return null;
+                    });
                 } catch (Exception e) {
                     // DB 업데이트 실패 시 커스텀 예외를 던짐
                     throw new DBUpdateFailedException(user.getUserId(), e);

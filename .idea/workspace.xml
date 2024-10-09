@@ -4,39 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="springeventlistener">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/config/kafka/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/java/config/RetryUserBatchConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/java/config/UserBatchConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/java/exception/DBUpdateFailedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/java/exception/EmailRetryableException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/java/scheduler/UserBatchScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/java/scheduler/UserRetryBatchScheduler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch/src/main/resources/application-local.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/50.EC2에 Kafka설정하기/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/51.로컬스프링에 Kafka설정하기/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/52. OutBox패턴/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/53. Saga패턴/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/54.타입 기반 DI/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/55.비동기 멀티스레드/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/56.@TransactionalEventListener/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/2. retry배치/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="선착순프로젝트설정">
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/58.스프링 어노테이션/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/59.멀티모듈 2/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/60.부하테스트/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/61.QueryDSL/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/62.동기화문제해결/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/63.쿠폰발급 구조개선/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/64.쿠폰발급 구조개선 LOCK개선/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/65.쿠폰발급 구조개선 cache개선/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/Project Setting/66.쿠폰발급서버/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alarm/src/main/java/org/payment/alarm/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/alarm/src/main/java/org/payment/alarm/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/TossPaymentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGServiceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/payments/service/pg/PGServiceFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/src/main/java/org/payment/db/user/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/db/src/main/java/org/payment/db/user/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/src/main/java/org/payment/db/user/UserRdbRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/db/src/main/java/org/payment/db/user/UserRdbRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/37.PG-Adapter적용/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/37.PG-Adapter적용/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/49.Spring Evnet Litener/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/49.Spring Evnet Litener/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/etc/Layer별 장애포인트/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/etc/Layer별 장애포인트/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/org/payment/api/ApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch/src/main/java/config/UserBatchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch/src/main/java/config/UserBatchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/40.Redis 기본타입,명령어/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/40.Redis 기본타입,명령어/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,30 +79,30 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/sideProject/fintech-service/description/Project Setting/57.스프링 배치",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/description/Project Setting&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.payment.api.payments.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\sideProject\fintech-service\description\Project Setting\57.스프링 배치" />
       <recent name="D:\sideProject\fintech-service\description\Project Setting" />
+      <recent name="D:\sideProject\fintech-service\description\Project Setting\58.스프링 기본세팅 어노테이션" />
+      <recent name="D:\sideProject\fintech-service\description\Project Setting\57.스프링 배치" />
       <recent name="D:\sideProject\fintech-service\batch\src\main\resources" />
       <recent name="D:\sideProject\fintech-service\description\etc" />
-      <recent name="D:\sideProject\fintech-service\api\src\main\java\org\payment\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\sideProject\fintech-service\description\Project Setting\57.스프링 배치\1. 기본배치" />
@@ -293,14 +275,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00032" summary="readme">
-      <option name="closed" value="true" />
-      <created>1723986615028</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1723986615028</updated>
     </task>
     <task id="LOCAL-00033" summary="dockerfile">
       <option name="closed" value="true" />
@@ -686,7 +660,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727619138793</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="springeventlistener, batch">
+      <option name="closed" value="true" />
+      <created>1728225061575</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1728225061575</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -702,7 +684,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="readme" />
     <MESSAGE value="https 설정" />
     <MESSAGE value="logback" />
     <MESSAGE value="toss payment" />
@@ -727,7 +708,8 @@
     <MESSAGE value="kafka 실전" />
     <MESSAGE value="resume" />
     <MESSAGE value="springeventlistener" />
-    <option name="LAST_COMMIT_MESSAGE" value="springeventlistener" />
+    <MESSAGE value="springeventlistener, batch" />
+    <option name="LAST_COMMIT_MESSAGE" value="springeventlistener, batch" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

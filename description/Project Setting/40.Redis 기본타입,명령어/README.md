@@ -11,7 +11,23 @@
 4. ZSET : sortedSet(Score로 정렬 가능)
 5. Hashes : Field:Value 형태로 여러개가 존재(RDB Table개념으로 사용)
 
-### 명령어
+### List 명령어
+1. LRANGE : 지정된 범위 값 반환(LRANGE COUPON_LIST 0 -1) // 전체 
+2. LPUSH : HEAD에 지정된 요소 추가
+3. RPUSH : TAIL에 지정된 요소 추가
+4. LPOP : LIST 첫번쨰 요소 제거 및 반환 O(N)-N
+5. RPOP : LIST 마지막 요소 제거 및 반환 O(N)-N
+6. LLEN : 전체 크기
+7. LPOS : 일치하는 요소 찾기 O(N)-N
+
+### SET 명령어
+1. SMEMBERS : 전체요소반환
+2. SADD: 추가
+3. SISMEMBER : SET에 해당 값이 있는지 확인
+4. SCARD : SET에 저장된 요소 수 반환
+5. SREM : 특정 요소 삭제
+
+### ZSET 명령어
 1. ZADD : 입력
 2. ZCARD : COUNT
 3. ZRANGE : 정렬조회(score오름차순)
