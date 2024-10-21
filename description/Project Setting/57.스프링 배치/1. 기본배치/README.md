@@ -21,6 +21,7 @@
 - 특정 함수에서 발생하는 예외/실패에 대해 재시도 수행 설정
 - 재시도 횟수, 간격, 예외유형에 따른 다른 retry등 세밀한 설정 가능
 ```java
+// Retry 및 Skip 처리 적용 (최대 3회 재시도 후 실패한 항목은 Redis에 저장)
 @Bean
 public RetryTemplate retryTemplate() {
     RetryTemplate retryTemplate = new RetryTemplate();
@@ -39,6 +40,7 @@ public RetryTemplate retryTemplate() {
   - DiscardOldestPolicy: 가장 오래된 대기 중인 작업을 버리고, 새로운 작업을 대기 큐에 추가
 ```java
 @Bean
+// 메인쓰레드와 분리된 새로운 쓰레드 풀 생성해서 병렬처리
 public TaskExecutor taskExecutor() {
     ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
     taskExecutor.setCorePoolSize(10);  // 최소 10개의 스레드 유지
@@ -54,6 +56,7 @@ public TaskExecutor taskExecutor() {
 3. TaskExecutorRepeatTemplate (병렬 처리 템플릿 설정)
 ```java
 @Bean
+// TaskExecutorRepeatTemplate:  Spring Batch에서 병렬로 처리하기 위해 사용하는 템플릿
 public RepeatOperations customRepeatOperations() {
     TaskExecutorRepeatTemplate repeatTemplate = new TaskExecutorRepeatTemplate();
     repeatTemplate.setTaskExecutor(taskExecutor());  // TaskExecutor 적용
@@ -79,8 +82,8 @@ public Step sendPasswordChangeEmailStep(JobRepository jobRepository, PlatformTra
             .processor(userProcessor())  // 이메일 전송 로직 적용
             .writer(userWriter())
             .faultTolerant()
-            .retryLimit(3)  // 3회 재시도
-            .retry(Exception.class)
+            .retryLimit(3)  // reader,processor,writer 각각 3회 재시도
+            .retry(Exception.class) // 모든 예외에 대해 재시도
             .skipPolicy(skipPolicy())  // 실패한 경우 스킵 후 Redis에 저장
             .startLimit(3)  // 스텝 자체의 최대 실행 횟수 제한
             .stepOperations(customRepeatOperations())  // 병렬 처리 적용

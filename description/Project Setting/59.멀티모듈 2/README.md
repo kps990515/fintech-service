@@ -62,7 +62,8 @@ dependencies {
 ```
 
 - @Import는 해당 모듈의 설정(빈, DB연결, 트랜잭션, 보안 등)을 가져와 스프링 컨텍스트에 포함시킴
-- System.setProperty: 해당 모듈 설정에 여러개의 설정을 한번에 읽어서 적용 가능
+- System.setProperty: 기본적으로 사용할 Spring Boot 설정 파일을 선택하는 코드
+  - 프로파일에 따른 설정이 추가로 필요한 경우, 각 프로파일에 맞는 설정이 덮어쓰여 적용(local, test, prod)
 ```java
 @Import(CouponCoreConfiguration.class)
 @SpringBootApplication

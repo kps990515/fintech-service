@@ -41,7 +41,7 @@ public class CouponIssueListener {
 
 ### 개선점 : 쿠폰발급 마감시 Cache의 available=false로 바꿔 controller부터 튕겨내게
 
-- couponIssueService.issue
+- 쿠폰발급서버의 couponIssueService.issue
   - 쿠폰발급수량이 마감되었으면 publishCouponEvent(coupon)실행
 ```java
 @Transactional
@@ -52,10 +52,18 @@ public void issue(long couponId, long userId) {
     publishCouponEvent(coupon);
 }
 ```
+- coupon의 availableIssueQuantity를 체크해서 다 발급되었는지 확인
+```java
+private void publishCouponEvent(Coupon coupon) {
+    if (coupon.isIssueComplete()) {
+        applicationEventPublisher.publishEvent(new CouponIssueCompleteEvent(coupon.getId()));
+    }
+}
+```
 
 - CouponEventListener
-  - put이 실행될떄 캐시가 없으면 DB조회해서 새로운 Entity를 만드는데 availble=false로 저장되서
-  - 이후로는 Controller부터 막힘
+  - putCouponCache -> @CachePut으로 인해 DB조회 -> DB의 avaliableQuantity = false -> 캐시 저장
+  - 캐시의 availableIssueQuantity가 false로 업데이트되서 Controller단부터 막히게됨
 ```java
 @RequiredArgsConstructor
 @Component

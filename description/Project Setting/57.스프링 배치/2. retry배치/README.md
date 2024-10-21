@@ -2,6 +2,24 @@
 - Redis에 저장된 실패된 애들 재 처리
 - RetryTemplate, TaskExecutor는 동일
 
+```java
+// RedisItemReader 구현 (Redis에서 실패 항목을 읽어옴)
+public static class RedisItemReader implements ItemReader<String> {
+    private final RedisTemplate<String, String> redisTemplate;
+    private final String key;
+
+    public RedisItemReader(RedisTemplate<String, String> redisTemplate, String key) {
+        this.redisTemplate = redisTemplate;
+        this.key = key;
+    }
+
+    @Override
+    public String read() {
+        return redisTemplate.opsForList().rightPop(key);  // Redis에서 항목 하나를 꺼냄
+    }
+}
+```
+
 1. skippedEmails 재처리 Job
 ```java
 @Bean

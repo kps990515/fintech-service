@@ -18,7 +18,7 @@ public void logBeforeMethod(JoinPoint joinPoint) {
 System.out.println("Executing method: " + joinPoint.getSignature().getName());
 }
 ```
-   - exposeProxy = true 
+   - @EnableAspectJAutoProxy(exposeProxy = true)
      - 기본적으로 AOP는 외부에서 메서드를 호출할때만 프록시를 통해 동작
      - exposeProxy = true는 현재 객체의 프록시를 노출해서 자기자신을 호출해도 프록시가 작동하도록 함
      ```java
