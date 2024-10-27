@@ -101,7 +101,10 @@ public class KafkaOutboxProcessor {
 }
 ```
 - 실패시 비동기로 재처리
-- DLQ : 실패한 메시지 처리하기 위한 Redis큐(실패메시지처리, 추적, 재처리)
+- DLQ(Dead Letter Queue) 
+  - 메시징 시스템에서 처리되지 못한 메시지를 별도로 보관하는 큐
+  - 재시도 실패 / TTL초과 / 형식 오류일때 DLQ로 이동
+  - DLQ를 통해 모니터링 및 실패한 메시지 자동처리 가능
 ```java
 @Service
 public class FailureHandler {

@@ -32,7 +32,10 @@ public RetryTemplate retryTemplate() {
 }
 ```
 
-2. TaskExecutor (병렬 처리용 스레드 풀 설정)
+2. ThreadPoolTaskExecutor (병렬 처리용 스레드 풀 설정)
+- CorePoolSize: 최소 유지되는 스레드 수
+- Queue(기본값 Integer.MaxValue): CorePoolSize 스레드가 다 차면 큐에 저장 -> 큐가 꽉차면 MaxPoolSize로 넘어감
+- MaxPoolSize : Queue가 꽉 찬 경우 추가적인 요청이 들어오면 Max Pool Size까지 스레드를 확장하여 처리
 - setRejectedExecutionHandler : maxPoolsize도달, 대기큐 용량 초과시 처리하는 방법
   - CallerRunsPolicy: 작업을 거부하는 대신, 메인 스레드에서 직접 실행
   - AbortPolicy (기본값): 작업을 거부하고, RejectedExecutionException을 던져 예외 발생

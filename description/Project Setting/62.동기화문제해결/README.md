@@ -12,7 +12,9 @@
         synchronized(this) {
             Coupon coupon = findCouponWithLock(couponId);
             coupon.issue();
-            saveCouponIssue(couponId, userId);
+            // Lock은 saveCouponIssue함수 호출하고 반환
+            // Transaction은 해당 함수가 끝나고나서 종료
+            saveCouponIssue(couponId, userId);  
         }
     }
 ```

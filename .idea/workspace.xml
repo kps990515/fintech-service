@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="선착순프로젝트설정">
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="선착순프로젝트설명변경">
+      <change afterPath="$PROJECT_DIR$/description/etc/Uber Redis/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/Walmart Kafka/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/고가용성/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/네트워크/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/52. OutBox패턴/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/52. OutBox패턴/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/2. retry배치/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/2. retry배치/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/58.스프링 어노테이션/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/58.스프링 어노테이션/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/59.멀티모듈 2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/59.멀티모듈 2/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/62.동기화문제해결/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/62.동기화문제해결/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/64.쿠폰발급 구조개선 LOCK개선/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/64.쿠폰발급 구조개선 LOCK개선/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description/Project Setting/66.쿠폰발급서버/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/66.쿠폰발급서버/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +82,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/description/Project Setting&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/description/etc&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -90,11 +94,11 @@
       <recent name="org.payment.api.payments.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\sideProject\fintech-service\description\etc" />
       <recent name="D:\sideProject\fintech-service\description\Project Setting" />
       <recent name="D:\sideProject\fintech-service\description\Project Setting\58.스프링 기본세팅 어노테이션" />
       <recent name="D:\sideProject\fintech-service\description\Project Setting\57.스프링 배치" />
       <recent name="D:\sideProject\fintech-service\batch\src\main\resources" />
-      <recent name="D:\sideProject\fintech-service\description\etc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\sideProject\fintech-service\description\Project Setting\57.스프링 배치\1. 기본배치" />
@@ -267,14 +271,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00034" summary="dockerfile">
-      <option name="closed" value="true" />
-      <created>1723987125875</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1723987125875</updated>
     </task>
     <task id="LOCAL-00035" summary="dockerfile">
       <option name="closed" value="true" />
@@ -660,7 +656,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728514969627</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="선착순프로젝트설명변경">
+      <option name="closed" value="true" />
+      <created>1729524091221</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1729524091221</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -676,7 +680,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="logback" />
     <MESSAGE value="toss payment" />
     <MESSAGE value="testCode작성" />
     <MESSAGE value="LoggerFilter 적용" />
@@ -701,7 +704,8 @@
     <MESSAGE value="springeventlistener" />
     <MESSAGE value="springeventlistener, batch" />
     <MESSAGE value="선착순프로젝트설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="선착순프로젝트설정" />
+    <MESSAGE value="선착순프로젝트설명변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="선착순프로젝트설명변경" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

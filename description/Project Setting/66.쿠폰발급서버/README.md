@@ -1,6 +1,37 @@
 ## 쿠폰발급서버
 
-- CouponIssueListener
+### CouponIssueListener
+#### @Scheduled(fixedDelay = 1000)의 문제점
+  - 1초 안에 작업이 완료되지 않으면 중복 처리가 발생
+  - 멀티 인스턴스 환경 : 각 인스턴스가 동일한 작업을 동시에 실행되서 데이터 중복 처리 또는 경쟁 조건 문제발생
+  - 해결책
+    1. Schedule Lock 라이브러리 사용 
+    ```java
+    @Scheduled(fixedDelay = 1000)
+    @SchedulerLock(name = "processTask", lockAtLeastFor = "PT1S", lockAtMostFor = "PT5M")
+    public void processTask() { 
+    ```
+    2. Redis에서 작업상태 관리
+    - 기본값은 비어있음
+    - Redis에서 해당값이 True이면 이미 작업 중으로 판단
+    - 작업완료 되면 False로 변경
+    ```java
+    public void processTask() {
+    if (redisTemplate.opsForValue().get("task:lock") != null) {
+        return; // 이미 작업이 진행 중인 경우
+    }
+
+    // 작업 시작 표시
+    redisTemplate.opsForValue().set("task:lock", "true");
+
+    try {
+        // 작업 로직
+    } finally {
+        // 작업 완료 후 상태 해제
+        redisTemplate.delete("task:lock");
+    }
+    ```
+    3. 데이터베이스에서 처리된 항목 마킹
 ```java
 @RequiredArgsConstructor
 @EnableScheduling
