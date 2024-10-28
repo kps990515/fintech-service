@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="선착순프로젝트설명변경">
-      <change afterPath="$PROJECT_DIR$/description/etc/Uber Redis/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/Walmart Kafka/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/고가용성/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/네트워크/README.md" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="walmart mps">
+      <change afterPath="$PROJECT_DIR$/description/etc/DataSharing Between MSA/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/description/etc/EventDrivenArchitectual/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/52. OutBox패턴/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/52. OutBox패턴/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/57.스프링 배치/1. 기본배치/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/62.동기화문제해결/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/62.동기화문제해결/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/64.쿠폰발급 구조개선 LOCK개선/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/64.쿠폰발급 구조개선 LOCK개선/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/66.쿠폰발급서버/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/66.쿠폰발급서버/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,14 +264,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00035" summary="dockerfile">
-      <option name="closed" value="true" />
-      <created>1723987200993</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1723987200993</updated>
     </task>
     <task id="LOCAL-00036" summary="readme">
       <option name="closed" value="true" />
@@ -664,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729524091221</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="walmart mps">
+      <option name="closed" value="true" />
+      <created>1730031201629</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1730031201630</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -680,7 +673,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="toss payment" />
     <MESSAGE value="testCode작성" />
     <MESSAGE value="LoggerFilter 적용" />
     <MESSAGE value="versioning" />
@@ -705,7 +697,8 @@
     <MESSAGE value="springeventlistener, batch" />
     <MESSAGE value="선착순프로젝트설정" />
     <MESSAGE value="선착순프로젝트설명변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="선착순프로젝트설명변경" />
+    <MESSAGE value="walmart mps" />
+    <option name="LAST_COMMIT_MESSAGE" value="walmart mps" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
