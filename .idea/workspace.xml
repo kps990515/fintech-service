@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="walmart mps">
-      <change afterPath="$PROJECT_DIR$/description/etc/DataSharing Between MSA/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/description/etc/EventDrivenArchitectual/README.md" afterDir="false" />
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="eda">
+      <change afterPath="$PROJECT_DIR$/description/etc/TOSS문제/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/1. MultiModule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/1. MultiModule/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,13 +74,14 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/fintech-service/description/etc&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/sideProject/banking&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -264,14 +266,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00036" summary="readme">
-      <option name="closed" value="true" />
-      <created>1723988315857</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1723988315857</updated>
     </task>
     <task id="LOCAL-00037" summary="readme">
       <option name="closed" value="true" />
@@ -657,7 +651,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730031201630</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="eda">
+      <option name="closed" value="true" />
+      <created>1730120866234</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1730120866235</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -673,7 +675,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="testCode작성" />
     <MESSAGE value="LoggerFilter 적용" />
     <MESSAGE value="versioning" />
     <MESSAGE value="Session redis mysql" />
@@ -698,7 +699,8 @@
     <MESSAGE value="선착순프로젝트설정" />
     <MESSAGE value="선착순프로젝트설명변경" />
     <MESSAGE value="walmart mps" />
-    <option name="LAST_COMMIT_MESSAGE" value="walmart mps" />
+    <MESSAGE value="eda" />
+    <option name="LAST_COMMIT_MESSAGE" value="eda" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
