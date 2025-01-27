@@ -37,5 +37,21 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew clean build
 
-      - name: Build Docker image
-        run: docker build -t fintech-service .
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/ec2-user/fintech-service/api/build/libs/
+            ## 'java -jar' 문자열을 포함하는 모든 프로세스를 찾아 종료
+            ## true : pkill 명령어가 실패해도 계속 스크립트 실행
+            sudo pkill -f 'java -jar' || true
+            
+            ## nohup : 로그아웃 후에도 명령어가 계속 실행
+            ## 2>&1: 표준 에러 출력을 표준 출력과 같은 곳으로 리다이렉트합니다. 이는 에러 메시지도 app.log 파일에 기록 
+            ## & : 백그라운드에서 실행
+            nohup sudo java -jar api-1.0-SNAPSHOT.jar > app.log 2>&1 &
+```

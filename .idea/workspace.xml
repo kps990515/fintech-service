@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="ㅇㄹ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/4. Https/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/4. Https/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/description/Project Setting/5. CICD/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/5. CICD/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,14 +264,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00041" summary="readme">
-      <option name="closed" value="true" />
-      <created>1724163159155</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1724163159155</updated>
     </task>
     <task id="LOCAL-00042" summary="readme">
       <option name="closed" value="true" />
@@ -657,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737973603024</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="ㅇㄹ">
+      <option name="closed" value="true" />
+      <created>1737974293346</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1737974293346</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
