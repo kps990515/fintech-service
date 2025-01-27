@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="eda">
-      <change afterPath="$PROJECT_DIR$/description/etc/TOSS문제/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/api/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/1. MultiModule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/1. MultiModule/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="멀티모듈" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -266,14 +261,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00037" summary="readme">
-      <option name="closed" value="true" />
-      <created>1724088650236</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1724088650236</updated>
     </task>
     <task id="LOCAL-00038" summary="readme">
       <option name="closed" value="true" />
@@ -659,7 +646,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730120866235</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="멀티모듈">
+      <option name="closed" value="true" />
+      <created>1737466880978</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1737466880978</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -675,7 +670,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="LoggerFilter 적용" />
     <MESSAGE value="versioning" />
     <MESSAGE value="Session redis mysql" />
     <MESSAGE value="OSIV" />
@@ -700,7 +694,8 @@
     <MESSAGE value="선착순프로젝트설명변경" />
     <MESSAGE value="walmart mps" />
     <MESSAGE value="eda" />
-    <option name="LAST_COMMIT_MESSAGE" value="eda" />
+    <MESSAGE value="멀티모듈" />
+    <option name="LAST_COMMIT_MESSAGE" value="멀티모듈" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
