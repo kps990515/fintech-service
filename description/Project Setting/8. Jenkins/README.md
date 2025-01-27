@@ -30,6 +30,8 @@ pipeline {
     }
     post {
         success {
+            ## (**/build/libs/*.jar)을 Jenkins 서버에 보관
+            ## allowEmptyArchive: true 옵션은 아티팩트가 없어도 에러를 발생시키지 않도록 합니다.
             archiveArtifacts artifacts: '**/build/libs/*.jar', allowEmptyArchive: true
         }
         failure {
