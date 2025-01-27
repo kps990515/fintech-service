@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="멀티모듈">
+    <list default="true" id="316bbbe6-b010-43c8-b918-1068bae4a9c6" name="Changes" comment="ㅇㄹ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/description/Project Setting/1. MultiModule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/1. MultiModule/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/description/Project Setting/3. Docker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/description/Project Setting/3. Docker/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -265,14 +264,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1723469188615</updated>
-    </task>
-    <task id="LOCAL-00039" summary="readme">
-      <option name="closed" value="true" />
-      <created>1724163050263</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1724163050263</updated>
     </task>
     <task id="LOCAL-00040" summary="readme">
       <option name="closed" value="true" />
@@ -658,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737972075370</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="ㅇㄹ">
+      <option name="closed" value="true" />
+      <created>1737972700654</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1737972700654</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -674,7 +673,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="versioning" />
     <MESSAGE value="Session redis mysql" />
     <MESSAGE value="OSIV" />
     <MESSAGE value="대용량 트래픽 대비 &amp; 실패 대비 #1" />
@@ -699,7 +697,8 @@
     <MESSAGE value="walmart mps" />
     <MESSAGE value="eda" />
     <MESSAGE value="멀티모듈" />
-    <option name="LAST_COMMIT_MESSAGE" value="멀티모듈" />
+    <MESSAGE value="ㅇㄹ" />
+    <option name="LAST_COMMIT_MESSAGE" value="ㅇㄹ" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
