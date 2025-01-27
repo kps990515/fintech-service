@@ -21,32 +21,23 @@ server:
 implementation 'org.springframework.boot:spring-boot-starter-security'
 ```
 
-4. Security Config.java
-
-- Configuration
-  - 하나 이상의 @Bean 메서드를 포함하고 있으며, 이 메서드들이 Spring 컨테이너에 의해 관리되는 빈(Bean)을 정의
-
-- SecurityFilterChain
-  - HTTP 요청이 서버에 도달하기 전에 여러 보안 필터를 거치도록 구성하는 체계
-
-- authorizeHttpRequests()
-  - HTTP 요청 권한 부여 설정
-  - 여기서는 인증(로그인)이되어있는 Request만 받는 다는 세팅
-
-- .httpBasic(withDefaults());
-  - Authorization 헤더에 있는 사용자 이름과 비밀번호를 인증
-
+4. SecurityConfig.java
 ```java
 @Configuration
 public class SecurityConfig {
     @Bean
+    // SecurityFilterChain : HTTP 요청이 서버에 도달하기 전에 여러 보안 필터를 거치도록 구성하는 체계
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+            // HTTP 요청에 대한 보안 규칙을 설정합니다.
             .authorizeHttpRequests(authorizeRequests ->
+                // 보안 규칙 : 모든 요청에 대해 인증된 사용자만 접근할 수 있도록 합니다.
                 authorizeRequests.anyRequest().authenticated()
             )
+            // HTTP 기본 인증을 활성화합니다.
             .httpBasic(withDefaults());
 
+        // 구성된 HttpSecurity 객체를 기반으로 SecurityFilterChain 객체를 생성하고 반환합니다.
         return http.build();
     }
 }
@@ -86,6 +77,7 @@ public class ApiApplication {
 3. 토스페이먼츠 config
 ```java
 @Getter
+// 타입-세이프(type-safe)한 방식으로 외부 설정을 클래스로 바인딩하는 용도로 사용
 @ConfigurationProperties(prefix = "toss.payments")
 @RequiredArgsConstructor
 public class TossPaymentsConfig {
@@ -161,11 +153,13 @@ SomeObject obj = objectMapper.readValue(jsonString, SomeObject.class); // JSON �
 @Mapper
 public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
+    
+    @Mapping(source = "userId", target = "id")
+    UserVO toUserVO(UserEntity userEntity);
 
-    // PersonDTO를 Person 엔티티로 변환
-    Person toEntity(PersonDTO dto);
-
-    // Person 엔티티를 PersonDTO로 변환
-    PersonDTO toDto(Person entity);
+    @Mapping(target = "joinedAt", expression = "java(java.time.LocalDateTime.now())")
+    @Mapping(target = "createdAt", expression = "java(java.time.LocalDateTime.now())")
+    @Mapping(target = "modifiedAt", expression = "java(java.time.LocalDateTime.now())")
+    UserEntity toUserEntity(UserRegisterServiceRequestVO userRegisterServiceRequestVO);
 }
 ```
