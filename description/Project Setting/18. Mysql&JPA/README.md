@@ -38,33 +38,71 @@ create databases projectdb;
 - 활용법
   - true : Lazy로딩 미사용 / 요청이 많지 않은 곳 / 커넥션 많지 않은 곳
   - false : 실시간 고객서비스(채팅)
+  - 어차피 요즘은 front / back이 분리되서 매번 호출하기 때문에 false가 기본값
 
 
 ### 1. JPAConfig
 - db모듈에 세팅
 ```java
 @Configuration
+// 모든 JPA Repository 인터페이스를 스캔하여 빈으로 등록
 @EnableJpaRepositories(basePackages = "org.payment.db")
+// @Entity(엔터티) 클래스들을 스캔하여 영속성(Persistence) 컨텍스트에 등록
 @EntityScan(basePackages = "org.payment.db")
 public class JpaConfig {
 }
 ```
 
-### 2. BaseEntity생성
-- 공통사용 컬럼(생성, 변경일자 관리)
+### 2. BaseEntity생성 : 공통사용 컬럼(생성, 변경일자 관리)
+- @EnableJpaAuditing을 사용하면, 엔티티가 저장되거나 변경될 때 자동으로 필드를 업데이트
 ```java
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+
+@Configuration
+@EnableJpaAuditing  // JPA Auditing 기능 활성화
+public class JpaConfig {
+}
+```
+
+```java
+// 공통되는 필드를 상속받아 사용할 수 있도록 정의하는 부모 클래스
+// 직접 테이블이 생성되지 않고, 하위 엔티티가 상속받아 사용
 @MappedSuperclass
+// Auditing 기능을 활성화하여 엔티티의 생성 및 수정 시간을 자동으로 관리
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
-public class BaseEntity {
-   @CreatedDate
-   @Column(updatable = false)
-   private LocalDateTime createdAt;
+public abstract class BaseEntity implements Persistable<String> {
+  @Id
+  @Column(nullable = false, updatable = false, length = 45)
+  private String id; // 고유 식별자
 
-   @LastModifiedDate
-   private LocalDateTime modifiedAt;
-} 
+  @CreatedDate
+  @Column(updatable = false)
+  private LocalDateTime createdAt;
+
+  @LastModifiedDate
+  private LocalDateTime updatedAt;
+
+  @PrePersist
+  private void generateUUID() {
+    if (this.id == null || this.id.isEmpty()) {
+      this.id = UuidCreator.getTimeOrderedEpoch().toString();
+    }
+  }
+
+  @Override
+  @Transient
+  public boolean isNew() {
+    return this.createdAt == null;
+  }
+
+  @Override
+  public String getId() {
+    return this.id;
+  }
+}
 ```
 
 ### 3. Entity생성
@@ -76,7 +114,13 @@ public class BaseEntity {
 - @Prepersist
   - 엔티티가 처음 데이터베이스에 저장되기 전에 특정 로직을 실행
   - UUID를 먼저 생성하며 persist전에 불필요한 select쿼리 방지(어차피 중복안될값이라)
+
+- 순서
+  - isNew() : CrudRepository.save(entity) → 내부적으로 isNew() 호출하여 INSERT or UPDATE 결정.
+  - INSERT 전에는 @PrePersist 실행
+  - UPDATE이면 @PreUpdate 실행
 ```java
+// 부모클래스까지 포함하여 equals()와 hashCode()를 생성
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "user")
@@ -93,8 +137,10 @@ public class UserEntity extends BaseEntity implements Persistable<String> {
     // persist전에 기존 uuid체크해서 JPA SAVE시 Select 실행안되도록 함(효율적)
     // persist 연산을 통해 처음으로 데이터베이스에 저장되기 전에 메소드가 실행
     // DB에 처음 저장될때만 실행(Update할때마다 바꾸고 싶으면 @PreUpdate사용)
-    private void generateUUID(){
+    private void generateUUID() {
+      if (this.userId == null || this.userId.isEmpty()) {
         this.userId = UuidCreator.getTimeOrderedEpoch().toString();
+      }
     }
 
     @Column(name = "name", nullable = false, length = 256)
@@ -111,7 +157,7 @@ public class UserEntity extends BaseEntity implements Persistable<String> {
     private LocalDateTime joinedAt;
 
     @Override
-    @Transient
+    @Transient // JPA에서 특정 필드를 데이터베이스 컬럼으로 매핑하지 않도록 설정하는 어노테이션
     // 새로운 Entity의 경우 insert, 아니면 update
     public boolean isNew() {
         return getCreatedAt() == null || getCreatedAt().equals(getModifiedAt());
