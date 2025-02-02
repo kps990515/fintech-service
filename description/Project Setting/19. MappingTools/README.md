@@ -14,16 +14,20 @@
 ### 활용
 ```java
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface UserMapper {
-    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
-    // Entity -> 자바객체
-    @Mapping(source = "userId", target = "id")
-    UserVO toUserVO(UserEntity userEntity);
-    // 자바객체 -> Entity
-    @Mapping(target = "joinedAt", expression = "java(java.time.LocalDateTime.now())")
-    @Mapping(target = "createdAt", expression = "java(java.time.LocalDateTime.now())")
-    @Mapping(target = "modifiedAt", expression = "java(java.time.LocalDateTime.now())")
-    UserEntity toUserEntity(UserRegisterServiceRequestVO userRegisterServiceRequestVO);
+public interface BankClientRequestMapper {
+    BankClientRequestMapper INSTANCE = Mappers.getMapper(BankClientRequestMapper.class);
+
+    @Mapping(source = "fromAccountNumber", target = "accountNumber")
+    @Mapping(expression = "java(request.getFromAccountBank() + request.getFromAccountNumber())", target = "comment")
+    BankClientRequest toWithdrawRequest(TransferServiceRequest request);
+
+    @Mapping(source = "toAccountNumber", target = "accountNumber")
+    @Mapping(expression = "java(request.getToAccountBank() + request.getToAccountNumber())", target = "comment")
+    BankClientRequest toDepositRequest(TransferServiceRequest request);
+
+    @Mapping(source = "fromAccountNumber", target = "accountNumber")
+    @Mapping(expression = "java(request.getFromAccountBank() + request.getFromAccountNumber())", target = "comment")
+    BankClientRequest toUndoWithdrawalRequest(TransferServiceRequest request);
 }
 ```
 
